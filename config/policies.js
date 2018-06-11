@@ -21,6 +21,9 @@ module.exports.policies = {
  // whitelist the auth controller
  'auth': {
    '*': true
- }
+ },
+ 'profile': {
+  '*': true
+}
 
 };

@@ -14,7 +14,16 @@ module.exports = {
     password: {
       type: 'string',
       required: true
+    },
+    //associação com a tabela profile
+    id_profile: {
+      model: 'profile',
+    },
+    ativo: {
+      type: 'boolean',
+      defaultsTo: true
     }
+
   },
   customToJSON: function () {
     return _.omit(this, ['password'])

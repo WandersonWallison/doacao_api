@@ -18,11 +18,11 @@ module.exports = function (req, res, next) {
       return next();
     }
 
-    // If you are using a traditional, server-generated UI then uncomment out this code:
+    // Se você estiver usando uma interface de usuário tradicional gerada pelo servidor, remova o comentário desse código:
     res.redirect('/explore');
 
 
-    // If you are using a single-page client-side architecture and will login via socket or Ajax, then uncomment out this code:
+    // Se você estiver usando uma interface de usuário tradicional gerada pelo servidor, remova o comentário desse código:
     /*
     res.status(401);
     res.end();

@@ -36,12 +36,13 @@ module.exports = {
     User.create(data).fetch().exec(function (err, user) {
       if (err) return res.negoiate(err);
 
-      //TODO: Maybe send confirmation email to the user before login
+      //TODO: Talvez envie um email de confirmação para o usuário antes do login
       req.login(user, function (err) {
         if (err) return res.negotiate(err);
         sails.log('User ' + user.id + ' has logged in.');
-        return res.redirect('/');
+        //return res.redirect('/');
 
+        return res.json(user);
       })
     })
   }
