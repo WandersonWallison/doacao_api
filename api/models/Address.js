@@ -42,7 +42,14 @@ module.exports = {
     // associação com table user
     user_address: {
       model: 'user'
+    },
+    // associação com table office
+    office_address: {
+      model: 'office',
+      unique: true
     }
+
+
 
 
 

@@ -9,15 +9,31 @@ module.exports = {
 
   attributes: {
 
-//    Nome
-//Endereço
-//Cnpj
-//Contatos
-//Numero de vistas por AAI po dia
-//Tempo para AAI Aceitar
-//Tempo máximo para Rejeitar
-//Responsável
-
+    nome: {
+      type: 'string', required: true, maxLength: 120
+    },
+    cnpj: {
+      type: 'string', required: true
+    },
+    telefone: {
+      type: 'string', allowNull: true,
+    },
+    responsavel: {
+      type: 'string', required: true
+    },
+    qtd_visita_dia: {
+      type: 'number', required: true
+    },
+    tempo_aceita: {
+      type: 'number', required: true
+    },
+    tempo_rejeita: {
+      type: 'number', required: true
+    },
+    // associação com table addresss um p um
+    endereco: {
+      collection: 'address', via: 'office_address'
+    },
   },
 
 };
