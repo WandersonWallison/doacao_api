@@ -1,27 +1,80 @@
+//classe responsavel parar manager e agente
+
 const bcrypt = require('bcrypt-nodejs');
 module.exports = {
   attributes: {
     username: {
-      type: 'string',
-      required: true,
+      type: 'string', required: true,
     },
     email: {
-      type: 'string',
-      required: true,
-      unique: true,
-      isEmail: true
+      type: 'string', required: true, unique: true, isEmail: true
     },
     password: {
+      type: 'string', required: true
+    },
+    cvm: {
+      type: "string"
+    },
+    data_inicio: {
+      type: 'string', columnType: 'date',
+    },
+    cnh_rg: {
+      type: 'string', required: true
+    },
+    data_emissao: {
+      type: 'string', columnType: 'date', required: true
+    },
+    uf: {
+      type: "string"
+    },
+    genero: {
+      type: "string", isIn: ['M', 'F'],
+    },
+    telefone: {
+      type: 'string', allowNull: true,
+    },
+    rede_social: {
+      type: "string"
+    },
+    estado_civil: {
+      type: "string", isIn: ['Solteiro', 'Casado', 'Divorciado', 'Viúvo', 'Outros'],
+    },
+    nome_conjuge: {
+      type: 'string', maxLength: 120
+    },
+    nome_mae: {
+      type: 'string', maxLength: 120
+    },
+    nome_pai: {
+      type: 'string', maxLength: 120
+    },
+    data_nascimento: {
+      type: 'string', columnType: 'date', required: true
+    },
+    cpf: {
+      type: 'string', required: true
+    },
+    escolaridade: {
       type: 'string',
-      required: true
+    },
+    ativo: {
+      type: 'boolean', defaultsTo: true
+    },
+    // associação com table addess
+    enderecos: {
+      collection: 'address', via: 'user_address'
+    },
+    // associação com table bank
+    contas: {
+      collection: 'bank', via: 'user_bank'
+    },
+    // associação com table company
+    user_company: {
+      model: 'company'
     },
     //associação com a tabela profile
     id_profile: {
       model: 'profile',
-    },
-    ativo: {
-      type: 'boolean',
-      defaultsTo: true
     }
 
   },
