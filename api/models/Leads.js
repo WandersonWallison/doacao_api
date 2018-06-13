@@ -71,6 +71,11 @@ module.exports = {
     // associação com table company
     leads_company: {
       model: 'company'
+    },
+    // associação com table Schedule
+    leads_schedule: {
+      model: 'schedule',
+      unique: true
     }
 
 

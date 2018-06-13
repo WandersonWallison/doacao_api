@@ -18,6 +18,17 @@ module.exports = {
     telefone: {
       type: 'string', allowNull: true,
     },
+    abertura: {
+      type: 'number',
+      columnType: 'datetime',
+    },
+    fechamento: {
+      type: 'number',
+      columnType: 'datetime',
+    },
+    dia_semana: {
+      type: 'string'
+    },
     responsavel: {
       type: 'string', required: true
     },
@@ -33,6 +44,10 @@ module.exports = {
     // associação com table addresss um p um
     endereco: {
       collection: 'address', via: 'office_address'
+    },
+    // associação com table addresss um p muitos
+    agendamentos: {
+      collection: 'schedule', via: 'office_schedule'
     },
   },
 
