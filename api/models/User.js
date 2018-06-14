@@ -19,10 +19,10 @@ module.exports = {
       type: 'string', columnType: 'date',
     },
     cnh_rg: {
-      type: 'string', required: true
+      type: 'string'
     },
     data_emissao: {
-      type: 'string', columnType: 'date', required: true
+      type: 'string', columnType: 'date'
     },
     uf: {
       type: "string"
@@ -31,7 +31,7 @@ module.exports = {
       type: "string", isIn: ['M', 'F'],
     },
     telefone: {
-      type: 'string', allowNull: true,
+      type: 'number', allowNull: true,
     },
     rede_social: {
       type: "string"
@@ -49,10 +49,10 @@ module.exports = {
       type: 'string', maxLength: 120
     },
     data_nascimento: {
-      type: 'string', columnType: 'date', required: true
+      type: 'string', columnType: 'date'
     },
     cpf: {
-      type: 'string', required: true
+      type: 'string'
     },
     escolaridade: {
       type: 'string',
@@ -79,9 +79,8 @@ module.exports = {
     },
     //associação com a tabela profile
     id_profile: {
-      model: 'profile',
+      model: 'profile'
     }
-
   },
   customToJSON: function () {
     return _.omit(this, ['password'])
