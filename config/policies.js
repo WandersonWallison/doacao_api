@@ -24,6 +24,15 @@ module.exports.policies = {
  },
  'profile': {
   '*': true
+},
+'leads': {
+  '*': true
+},
+'office': {
+  '*': true
+},
+'address': {
+  '*': true
 }
 
 };

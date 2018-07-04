@@ -46,10 +46,10 @@ module.exports = {
       type: 'string', maxLength: 120
     },
     data_nascimento: {
-      type: 'string', columnType: 'date', required: true
+      type: 'string', columnType: 'date'
     },
     cpf: {
-      type: 'string', required: true
+      type: 'string'
     },
     escolaridade: {
       type: 'string',
