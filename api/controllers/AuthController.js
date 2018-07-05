@@ -15,7 +15,7 @@ module.exports = {
       req.login(user, function (err) {
         if (err) res.send(err);
         //return res.redirect('/');
-        return res.json(user);
+        return res.json({message: info.message ,user});
       });
     })(req, res);
   },
