@@ -28,7 +28,7 @@ module.exports = {
       type: 'string', unique: true, isEmail: true, maxLength: 200
     },
     telefone: {
-      type: 'string', allowNull: true, required: true
+      type: 'string', allowNull: true
     },
     rede_social: {
       type: "string"
