@@ -13,10 +13,10 @@ module.exports = {
       type: 'string', required: true, maxLength: 120
     },
     cnh_rg: {
-      type: 'string', required: true
+      type: 'string'
     },
     data_emissao: {
-      type: 'string', columnType: 'date', required: true
+      type: 'string', columnType: 'date'
     },
     uf: {
       type: "string"
@@ -25,10 +25,10 @@ module.exports = {
       type: "string", isIn: ['M', 'F'],
     },
     email: {
-      type: 'string', required: true, unique: true, isEmail: true, maxLength: 200
+      type: 'string', unique: true, isEmail: true, maxLength: 200
     },
     telefone: {
-      type: 'string', allowNull: true,
+      type: 'string', allowNull: true, required: true
     },
     rede_social: {
       type: "string"
