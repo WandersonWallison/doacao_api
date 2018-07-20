@@ -33,6 +33,9 @@ module.exports.policies = {
 },
 'address': {
   '*': true
+},
+'bank': {
+  '*': true
 }
 
 };

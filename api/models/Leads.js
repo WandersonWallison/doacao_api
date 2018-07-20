@@ -16,10 +16,7 @@ module.exports = {
       type: 'string'
     },
     data_emissao: {
-      type: 'string', columnType: 'date'
-    },
-    uf: {
-      type: "string"
+      type: 'string', columnType: 'date', allowNull: true
     },
     genero: {
       type: "string", isIn: ['M', 'F'],
@@ -46,7 +43,7 @@ module.exports = {
       type: 'string', maxLength: 120
     },
     data_nascimento: {
-      type: 'string', columnType: 'date'
+      type: 'string', columnType: 'date', allowNull: true
     },
     cpf: {
       type: 'string'
