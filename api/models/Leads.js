@@ -16,7 +16,7 @@ module.exports = {
       type: 'string'
     },
     data_emissao: {
-      type: 'string', columnType: 'date', allowNull: true
+      type: 'string', columnType: 'datetime', allowNull: true
     },
     genero: {
       type: "string", isIn: ['M', 'F'],
