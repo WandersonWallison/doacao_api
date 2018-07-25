@@ -51,6 +51,9 @@ module.exports = {
     escolaridade: {
       type: 'string',
     },
+    status: {
+      type: "string", isIn: ['Confirmou', 'Não atendeu', 'Ligar Novamente', 'Indefinido', 'Outros'],
+    },
     tipo: {
       type: "string", isIn: ['Lead', 'Cliente'],
     },

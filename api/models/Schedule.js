@@ -13,6 +13,9 @@ module.exports = {
       columnType: 'datetime',
       required: true
     },
+    hora:{
+      type: 'number'
+    },
     tempo_ligacao: {
       type: 'number',
       columnType: 'datetime',
@@ -25,9 +28,6 @@ module.exports = {
       type: 'number',
       columnType: 'datetime',
     },
-    status: {
-      type: "string", isIn: ['Confirmou', 'Não atendeu', 'Ligar Novamente', 'Indefinido', 'Outros'],
-    },
     office_schedule: {
       model: 'office'
     },
@@ -37,6 +37,10 @@ module.exports = {
     // associação com table leads / cliente um p um
     lead: {
       collection: 'leads', via: 'leads_schedule'
+    },
+    // associação com table addresss um p um
+    endereco: {
+      collection: 'address', via: 'schedule_address'
     },
     // associação com table manager / agente um p um
     user: {
