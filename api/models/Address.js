@@ -12,7 +12,7 @@ module.exports = {
       type: "string", isIn: ['Pessoal', 'Comercial'],
     },
     cep: {
-      type: "string", unique: true
+      type: "string"
     },
     uf: {
       type: "string", maxLength: 2

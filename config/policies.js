@@ -17,25 +17,31 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
- '*': 'authenticated',
- // whitelist the auth controller
- 'auth': {
-   '*': true
- },
- 'profile': {
-  '*': true
-},
-'leads': {
-  '*': true
-},
-'office': {
-  '*': true
-},
-'address': {
-  '*': true
-},
-'bank': {
-  '*': true
-}
+  '*': 'authenticated',
+  // whitelist the auth controller
+  'auth': {
+    '*': true
+  },
+  'profile': {
+    '*': true
+  },
+  'leads': {
+    '*': true
+  },
+  'office': {
+    '*': true
+  },
+  'address': {
+    '*': true
+  },
+  'bank': {
+    '*': true
+  },
+  'schedule': {
+    '*': true
+  },
+  'user': {
+    '*': true
+  }
 
 };

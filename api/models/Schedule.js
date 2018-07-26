@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
     data: {
-      type: 'number',
+      type: 'string',
       columnType: 'datetime',
       required: true
     },
