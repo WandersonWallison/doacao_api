@@ -12,12 +12,19 @@ module.exports = {
     nome: {
       type: 'string', required: true, maxLength: 120
     },
+    data_criacao: {
+      type: 'string', columnType: 'datetime'
+    },
     cnh_rg: {
       type: 'string'
     },
     data_emissao: {
       type: 'string', columnType: 'date', allowNull: true
     },
+    data_atendimento: {
+      type: 'string', columnType: 'datetime'
+    },
+
     genero: {
       type: "string", isIn: ['M', 'F'],
     },
@@ -52,7 +59,7 @@ module.exports = {
       type: 'string',
     },
     status: {
-      type: "string", isIn: ['Confirmou', 'Não atendeu', 'Ligar Novamente', 'Indefinido', 'Outros'],
+      type: "string", isIn: ['Dados Incorrtos', 'Não Aceita Visita'],
     },
     tipo: {
       type: "string", isIn: ['Lead', 'Cliente'],

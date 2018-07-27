@@ -26,6 +26,9 @@ module.exports = {
     logradouro: {
       type: 'string',
     },
+    numero:{
+      type: 'number'
+    },
     latitude: {
       type: 'string', maxLength: 30,
     },
