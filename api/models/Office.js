@@ -18,6 +18,9 @@ module.exports = {
     telefone: {
       type: 'string', allowNull: true,
     },
+    email: {
+      type: 'string', unique: true, isEmail: true, maxLength: 200
+    },
     abertura: {
       type: 'number',
       columnType: 'datetime',
