@@ -24,7 +24,6 @@ module.exports = {
     data_atendimento: {
       type: 'string', columnType: 'datetime'
     },
-
     genero: {
       type: "string", isIn: ['M', 'F'],
     },
@@ -33,6 +32,12 @@ module.exports = {
     },
     telefone: {
       type: 'string', allowNull: true
+    },
+    celular: {
+      type: 'string', allowNull: true
+    },
+    obs: {
+      type: 'string'
     },
     rede_social: {
       type: "string"
