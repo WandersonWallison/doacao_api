@@ -73,9 +73,8 @@ module.exports = {
       model: 'company'
     },
     // associação com table Schedule
-    user_schedule: {
-      model: 'schedule',
-      unique: true
+    schedules: {
+      collection: 'schedule', via: 'agentes'
     },
     //associação com a tabela profile
     id_profile: {

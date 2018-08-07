@@ -42,9 +42,9 @@ module.exports = {
     endereco: {
       collection: 'address', via: 'schedule_address'
     },
-    // associação com table manager / agente um p um
-    user: {
-      collection: 'user', via: 'user_schedule'
+    // associação com table manager / agente um p muitos
+    agentes: {
+      model: 'user'
     },
     ativo: {
       type: 'boolean', defaultsTo: true
