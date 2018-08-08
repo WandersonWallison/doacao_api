@@ -33,6 +33,9 @@ module.exports = {
     telefone: {
       type: 'number', allowNull: true,
     },
+    celular: {
+      type: 'number', allowNull: true,
+    },
     rede_social: {
       type: "string"
     },
