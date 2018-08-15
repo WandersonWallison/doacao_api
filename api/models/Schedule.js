@@ -13,7 +13,7 @@ module.exports = {
       columnType: 'datetime',
       required: true
     },
-    hora:{
+    hora: {
       type: 'number'
     },
     tempo_ligacao: {
@@ -49,6 +49,11 @@ module.exports = {
     ativo: {
       type: 'boolean', defaultsTo: true
     },
+    status: {
+      type: "number", isIn: [0, 1, 2],
+      defaultsTo: 0
+    }
+
 
   },
 
