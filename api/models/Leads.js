@@ -85,9 +85,8 @@ module.exports = {
       model: 'company'
     },
     // associação com table Schedule
-    leads_schedule: {
-      model: 'schedule',
-      unique: true
+    agendamentos: {
+      collection: 'schedule', via: 'id_lead'
     }
 
 

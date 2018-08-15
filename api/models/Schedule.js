@@ -35,8 +35,9 @@ module.exports = {
       type: 'string'
     },
     // associação com table leads / cliente um p um
-    lead: {
-      collection: 'leads', via: 'leads_schedule'
+    id_lead: {
+      model: 'leads',
+      unique: true
     },
     // associação com table addresss um p um
     endereco: {
