@@ -53,8 +53,7 @@ module.exports = {
     },
     // associação com table office um p um
     schedule_address: {
-      model: 'schedule',
-      unique: true
+      model: 'schedule'
     }
 
 
