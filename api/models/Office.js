@@ -4,7 +4,6 @@
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
-
 module.exports = {
 
   attributes: {
@@ -15,6 +14,9 @@ module.exports = {
     cnpj: {
       type: 'string', required: true
     },
+    site: {
+      type: 'string'
+    },
     telefone: {
       type: 'string', allowNull: true,
     },
@@ -24,10 +26,11 @@ module.exports = {
     abertura: {
       type: 'number',
       columnType: 'datetime',
+
     },
     fechamento: {
       type: 'number',
-      columnType: 'datetime',
+      columnType: 'datetime'
     },
     dia_semana: {
       type: 'string'
@@ -39,9 +42,6 @@ module.exports = {
       type: 'number', required: true
     },
     tempo_aceita: {
-      type: 'number', required: true
-    },
-    tempo_rejeita: {
       type: 'number', required: true
     },
     // associação com table addresss um p um
