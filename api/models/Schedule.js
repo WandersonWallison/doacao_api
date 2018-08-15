@@ -36,8 +36,7 @@ module.exports = {
     },
     // associação com table leads / cliente um p um
     id_lead: {
-      model: 'leads',
-      unique: true
+      model: 'leads'
     },
     // associação com table addresss um p um
     endereco: {
