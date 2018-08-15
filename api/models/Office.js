@@ -24,12 +24,12 @@ module.exports = {
       type: 'string', unique: true, isEmail: true, maxLength: 200
     },
     abertura: {
-      type: 'number',
+      type: 'string',
       columnType: 'datetime',
 
     },
     fechamento: {
-      type: 'number',
+      type: 'string',
       columnType: 'datetime'
     },
     dia_semana: {
