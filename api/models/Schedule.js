@@ -45,7 +45,6 @@ module.exports = {
     // associação com table manager / agente um p muitos
     agentes: {
       model: 'user',
-      defaultsTo: 0
     },
     ativo: {
       type: 'boolean', defaultsTo: true
