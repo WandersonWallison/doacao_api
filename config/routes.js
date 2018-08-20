@@ -31,6 +31,7 @@ module.exports.routes = {
   'post /login': 'AuthController.login',
   'post /register': 'AuthController.register',
   '/logout': 'AuthController.logout',
+  'get /proc':'ScheduleController.proc'
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
