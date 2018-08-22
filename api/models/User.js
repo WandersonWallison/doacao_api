@@ -71,10 +71,6 @@ module.exports = {
     contas: {
       collection: 'bank', via: 'user_bank'
     },
-    // associação com table company
-    user_company: {
-      model: 'company'
-    },
     // associação com table Schedule
     schedules: {
       collection: 'schedule', via: 'agentes'
@@ -82,7 +78,12 @@ module.exports = {
     //associação com a tabela profile
     id_profile: {
       model: 'profile'
+    },
+    //associação com a tabela profile
+    id_office: {
+      model: 'office'
     }
+
   },
   customToJSON: function () {
     return _.omit(this, ['password'])

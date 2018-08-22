@@ -44,6 +44,13 @@ module.exports = {
     tempo_aceita: {
       type: 'number', required: true
     },
+    users: {
+      collection: 'user',
+      via: 'id_office'
+    },
+    id_company: {
+      model: 'company'
+    },
     // associação com table addresss um p um
     endereco: {
       collection: 'address', via: 'office_address'
