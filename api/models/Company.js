@@ -27,8 +27,8 @@ module.exports = {
       collection: 'leads', via: 'leads_company'
     },
     // associação com table leads
-    users: {
-      collection: 'user', via: 'user_company'
+    offices: {
+      collection: 'office', via: 'id_company'
     },
 
   },

@@ -24,6 +24,10 @@ module.exports = {
     data_atendimento: {
       type: 'string', columnType: 'datetime'
     },
+    //data que valida a tempo de trabalho do Runter
+    data_expiraçao: {
+      type: 'string', columnType: 'datetime'
+    },
     genero: {
       type: "string", isIn: ['M', 'F'],
     },
@@ -69,8 +73,18 @@ module.exports = {
     tipo: {
       type: "string", isIn: ['Lead', 'Cliente'],
     },
+    //campo que valida o satatus atual do lead (1 - agendado, 2-regeitado, 3-aceito )
+    momento_atual:{
+      type:"number"
+    },
     ativo: {
       type: 'boolean', defaultsTo: true
+    },
+    id_user_criador: {
+      type: 'number', required: true
+    },
+    id_user_editor: {
+      type: 'number'
     },
     // associação com table addess
     enderecos: {
