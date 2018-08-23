@@ -13,18 +13,20 @@ module.exports = {
     nome: {
       type: 'string', required: true, maxLength: 120
     },
-    funcao: {
+    rezao_social: {
       type: 'string', required: true, maxLength: 120
     },
-    cargo: {
-      type: 'string', required: true, maxLength: 120
+    email: {
+      type: 'string', required: true, unique: true, isEmail: true
     },
-    socio: {
+    cnpj: {
       type: 'string', maxLength: 120
     },
-    // associação com table leads
-    leads: {
-      collection: 'leads', via: 'leads_company'
+    telefone: {
+      type: 'number', allowNull: true,
+    },
+    site: {
+      type: 'string'
     },
     // associação com table leads
     offices: {

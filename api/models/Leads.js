@@ -94,10 +94,6 @@ module.exports = {
     contas: {
       collection: 'bank', via: 'leads_bank'
     },
-    // associação com table company
-    leads_company: {
-      model: 'company'
-    },
     // associação com table Schedule
     agendamentos: {
       collection: 'schedule', via: 'id_lead'
