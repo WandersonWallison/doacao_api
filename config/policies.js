@@ -42,6 +42,12 @@ module.exports.policies = {
   },
   'user': {
     '*': true
+  },
+  'company': {
+    '*': true
+  },
+  'leadhistorico': {
+    '*': true
   }
 
 };

@@ -13,7 +13,7 @@ module.exports = {
     nome: {
       type: 'string', required: true, maxLength: 120
     },
-    rezao_social: {
+    razao_social: {
       type: 'string', required: true, maxLength: 120
     },
     email: {
