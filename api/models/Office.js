@@ -12,7 +12,7 @@ module.exports = {
       type: 'string', required: true, maxLength: 120
     },
     cnpj: {
-      type: 'string', required: true
+      type: 'string'
     },
     site: {
       type: 'string'
