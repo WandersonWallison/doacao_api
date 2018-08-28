@@ -25,7 +25,7 @@ module.exports = {
       type: 'string', columnType: 'datetime'
     },
     //data que valida a tempo de trabalho do Runter
-    data_expiraçao: {
+    data_expiracao: {
       type: 'string', columnType: 'datetime'
     },
     genero: {
