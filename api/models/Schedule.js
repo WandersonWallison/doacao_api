@@ -21,11 +21,11 @@ module.exports = {
       columnType: 'datetime',
     },
     abertura: {
-      type: 'number',
+      type: 'string',
       columnType: 'datetime',
     },
     fechamento: {
-      type: 'number',
+      type: 'string',
       columnType: 'datetime',
     },
     office_schedule: {
