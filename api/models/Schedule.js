@@ -34,6 +34,12 @@ module.exports = {
     obs: {
       type: 'string'
     },
+    obs_motivo: {
+      type: 'string'
+    },
+    motivo: {
+      type: 'string'
+    },
     // associação com table leads / cliente um p um
     id_lead: {
       model: 'leads'
@@ -49,8 +55,9 @@ module.exports = {
     ativo: {
       type: 'boolean', defaultsTo: true
     },
+    // verificar movimentação do agendamento 0 todos , 1 - aceito , 2 - não aceita , 3- realizado , 4 - negado
     status: {
-      type: "number", isIn: [0, 1, 2],
+      type: "number", isIn: [0, 1, 2, 3, 4],
       defaultsTo: 0
     }
 
