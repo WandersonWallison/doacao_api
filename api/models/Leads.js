@@ -86,6 +86,9 @@ module.exports = {
     id_user_editor: {
       type: 'number'
     },
+    id_office: {
+      type: 'number'
+    },
     // associação com table addess
     enderecos: {
       collection: 'address', via: 'leads_address'
