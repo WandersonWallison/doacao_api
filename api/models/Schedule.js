@@ -16,11 +16,22 @@ module.exports = {
     hora: {
       type: 'number'
     },
+    qtd_retorno: {
+      type: 'number'
+    },
     tempo_ligacao: {
-      type: 'number',
+      type: 'string',
       columnType: 'datetime',
     },
     abertura: {
+      type: 'string',
+      columnType: 'datetime',
+    },
+    data_criacao: {
+      type: 'string',
+      columnType: 'datetime',
+    },
+    data_expiracao: {
       type: 'string',
       columnType: 'datetime',
     },
