@@ -23,7 +23,7 @@ module.exports = {
       type: 'string', maxLength: 120
     },
     telefone: {
-      type: 'string', allowNull: true
+      type: 'string'
     },
     site: {
       type: 'string'
