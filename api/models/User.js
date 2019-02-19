@@ -31,10 +31,10 @@ module.exports = {
       type: "string", isIn: ['M', 'F'],
     },
     telefone: {
-      type: 'number', allowNull: true,
+      type: 'string', allowNull: true,
     },
     celular: {
-      type: 'number', allowNull: true,
+      type: 'string', allowNull: true,
     },
     rede_social: {
       type: "string"
