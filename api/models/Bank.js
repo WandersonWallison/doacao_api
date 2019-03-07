@@ -25,6 +25,18 @@ module.exports = {
     aplicacao: {
       type: 'number', required: true
     },
+    nome_bancos: {
+      type: 'string'
+    },
+    previdencia: {
+      type: 'number'
+    },
+    coe: {
+      type: 'number'
+    },
+    renda_variavel: {
+      type: 'number'
+    },
     // associação com table leads
     leads_bank: {
       model: 'leads'
