@@ -25,17 +25,51 @@ module.exports = {
     aplicacao: {
       type: 'number', required: true
     },
-    nome_bancos: {
-      type: 'string'
+    // valor banco Bradesco
+    valor_b: {
+      type: 'number',
+      allowNull: true
+    },
+    // valor banco itau
+    valor_i: {
+      type: 'number',
+      allowNull: true
+    },
+    // valor banco santander
+    valor_st: {
+      type: 'number',
+      allowNull: true
+    },
+    // valor banco safra
+    valor_sf: {
+      type: 'number',
+      allowNull: true
+    },
+    // valor banco do Brasil
+    valor_bb: {
+      type: 'number',
+      allowNull: true
+    },
+    // valor banco outros
+    valor_o: {
+      type: 'number',
+      allowNull: true
+    },
+    nome_outros: {
+      type: 'string',
+      allowNull: true
     },
     previdencia: {
-      type: 'number'
+      type: 'number',
+      allowNull: true
     },
     coe: {
-      type: 'number'
+      type: 'number',
+      allowNull: true
     },
     renda_variavel: {
-      type: 'number'
+      type: 'number',
+      allowNull: true
     },
     // associação com table leads
     leads_bank: {
