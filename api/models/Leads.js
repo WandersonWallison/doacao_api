@@ -73,6 +73,10 @@ module.exports = {
     tipo: {
       type: "string", isIn: ['Lead', 'Cliente'],
     },
+    numero_operadora: {
+      type: 'string',
+      allowNull: true
+    },
     //campo que valida o satatus atual do lead (1 - AGENDANDO, 2-EXPIRADO_AGENDANDO, 3-AGENDANDO, 4-ACEITO_AGENDAMENTO, 5-REGEITADO_AGENDAMENTO )
     momento_atual:{
       type:"number"
