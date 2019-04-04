@@ -68,7 +68,7 @@ module.exports = {
       type: 'string',
     },
     status: {
-      type: "string", isIn: ['Dados Incorrtos', 'Não Aceita Visita'],
+      type: "string", isIn: ['Atendeu','Não Atendeu','Dados Incorrtos','Não Pode Falar', 'Não Aceita Visita'],
     },
     tipo: {
       type: "string", isIn: ['Lead', 'Cliente'],
