@@ -32,7 +32,7 @@ module.exports = {
       type: "string", isIn: ['M', 'F'],
     },
     email: {
-      type: 'string', isEmail: true, maxLength: 200
+      type: 'string', unique: true, isEmail: true, maxLength: 200
     },
     telefone: {
       type: 'string', allowNull: true
