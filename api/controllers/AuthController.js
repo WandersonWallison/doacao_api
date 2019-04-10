@@ -30,8 +30,7 @@ module.exports = {
     data = {
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password,
-      id_profile: req.body.id_profile
+      password: req.body.password
     }
     User.create(data).fetch().exec(function (err, user) {
       if (err) return res.negoiate(err);

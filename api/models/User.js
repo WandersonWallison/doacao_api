@@ -12,54 +12,6 @@ module.exports = {
     password: {
       type: 'string', required: true
     },
-    cvm: {
-      type: "string"
-    },
-    data_inicio: {
-      type: 'string', columnType: 'date',
-    },
-    cnh_rg: {
-      type: 'string'
-    },
-    data_emissao: {
-      type: 'string', columnType: 'date'
-    },
-    uf: {
-      type: "string"
-    },
-    genero: {
-      type: "string", isIn: ['M', 'F'],
-    },
-    telefone: {
-      type: 'string', allowNull: true,
-    },
-    celular: {
-      type: 'string', allowNull: true,
-    },
-    rede_social: {
-      type: "string"
-    },
-    estado_civil: {
-      type: "string", isIn: ['Solteiro', 'Casado', 'Divorciado', 'Viúvo', 'Outros'],
-    },
-    nome_conjuge: {
-      type: 'string', maxLength: 120
-    },
-    nome_mae: {
-      type: 'string', maxLength: 120
-    },
-    nome_pai: {
-      type: 'string', maxLength: 120
-    },
-    data_nascimento: {
-      type: 'string', columnType: 'date'
-    },
-    cpf: {
-      type: 'string'
-    },
-    escolaridade: {
-      type: 'string',
-    },
     ativo: {
       type: 'boolean', defaultsTo: true
     }

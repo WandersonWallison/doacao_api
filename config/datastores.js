@@ -49,7 +49,7 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: require('sails-mysql'),
-    url: 'mysql://root@localhost:3306/api-agendamento'
+    url: 'mysql://root@localhost:3306/prosp_dev'
 
   },
 
