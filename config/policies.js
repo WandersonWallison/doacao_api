@@ -22,32 +22,7 @@ module.exports.policies = {
   'auth': {
     '*': true
   },
-  'profile': {
-    '*': true
-  },
-  'leads': {
-    '*': true
-  },
-  'office': {
-    '*': true
-  },
-  'address': {
-    '*': true
-  },
-  'bank': {
-    '*': true
-  },
-  'schedule': {
-    '*': true
-  },
   'user': {
     '*': true
-  },
-  'company': {
-    '*': true
-  },
-  'leadhistorico': {
-    '*': true
   }
-
 };

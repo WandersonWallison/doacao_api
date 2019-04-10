@@ -62,28 +62,7 @@ module.exports = {
     },
     ativo: {
       type: 'boolean', defaultsTo: true
-    },
-    // associação com table addess
-    enderecos: {
-      collection: 'address', via: 'user_address'
-    },
-    // associação com table bank
-    contas: {
-      collection: 'bank', via: 'user_bank'
-    },
-    // associação com table Schedule
-    schedules: {
-      collection: 'schedule', via: 'agentes'
-    },
-    //associação com a tabela profile
-    id_profile: {
-      model: 'profile'
-    },
-    //associação com a tabela profile
-    id_office: {
-      model: 'office'
     }
-
   },
   customToJSON: function () {
     return _.omit(this, ['password'])

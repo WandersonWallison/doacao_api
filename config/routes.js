@@ -30,7 +30,8 @@ module.exports.routes = {
   //Auth
   'post /login': 'AuthController.login',
   'post /register': 'AuthController.register',
-  '/logout': 'AuthController.logout'
+  '/logout': 'AuthController.logout',
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
