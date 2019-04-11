@@ -72,6 +72,7 @@ module.exports.models = {
     dthr_registro: { type: 'ref', columnType: 'datetime', autoCreatedAt: true, },
     dthr_atualizacao: { type: 'ref', columnType: 'datetime', autoUpdatedAt: true, },
     id: { type: 'number', autoIncrement: true, },
+    id_responsavel: { type: 'number' },
     //--------------------------------------------------------------------------
     //  /\   Using MongoDB?
     //  ||   Replace `id` above with this instead:

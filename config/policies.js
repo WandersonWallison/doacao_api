@@ -24,5 +24,8 @@ module.exports.policies = {
   },
   'user': {
     '*': true
+  },
+  'acesso_grupo': {
+    '*': true
   }
 };

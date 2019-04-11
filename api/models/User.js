@@ -4,18 +4,28 @@ const bcrypt = require('bcrypt-nodejs');
 module.exports = {
   attributes: {
     username: {
+      columnName: 'nome',
       type: 'string', required: true,
     },
     email: {
+      columnName: 'login',
       type: 'string', required: true, unique: true, isEmail: true
     },
     password: {
+      columnName: 'senha',
       type: 'string', required: true
     },
     ativo: {
       type: 'boolean', defaultsTo: true
-    }
+    },
+    // associação com table acesso_grupo um p um
+    id_acesso_grupo: {
+      model: 'acesso_grupo'
+    },
   },
+
+  tableName: 'acesso_usuario',
+
   customToJSON: function () {
     return _.omit(this, ['password'])
   },
