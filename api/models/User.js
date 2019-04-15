@@ -5,15 +5,24 @@ module.exports = {
   attributes: {
     username: {
       columnName: 'nome',
-      type: 'string', required: true,
+      type: 'string', required: true
     },
     email: {
       columnName: 'login',
       type: 'string', required: true, unique: true, isEmail: true
     },
+    cvm: {
+      type: "string"
+    },
     password: {
       columnName: 'senha',
       type: 'string', required: true
+    },
+    dt_inicio_ope: {
+      type: 'string', columnType: 'datetime'
+    },
+    dt_fim_ope: {
+      type: 'string', columnType: 'datetime'
     },
     ativo: {
       type: 'boolean', defaultsTo: true
