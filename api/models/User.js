@@ -30,7 +30,7 @@ module.exports = {
     // associação com table acesso_grupo um p um
     id_acesso_grupo: {
       model: 'acesso_grupo'
-    },
+    }
   },
 
   tableName: 'acesso_usuario',
