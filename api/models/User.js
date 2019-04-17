@@ -27,6 +27,10 @@ module.exports = {
     ativo: {
       type: 'boolean', defaultsTo: true
     },
+    // auto relacionamento user
+    id_pai: {
+      model: 'user', via: 'id'
+    },
     // associação com table acesso_grupo um p um
     id_acesso_grupo: {
       model: 'acesso_grupo'
