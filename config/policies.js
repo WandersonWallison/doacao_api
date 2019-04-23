@@ -27,5 +27,12 @@ module.exports.policies = {
   },
   'acesso_grupo': {
     '*': true
+  },
+  'tipo_link': {
+    '*': true
+  }
+  ,
+  'tipo_situacao_tributaria': {
+    '*': true
   }
 };
