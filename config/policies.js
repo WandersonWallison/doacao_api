@@ -35,4 +35,11 @@ module.exports.policies = {
   'tipo_situacao_tributaria': {
     '*': true
   }
+  ,
+  'tipo_movimento': {
+    '*': true
+  },
+  'tipo_situacao_movimento': {
+    '*': true
+  }
 };

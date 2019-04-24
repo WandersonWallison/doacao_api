@@ -1,7 +1,7 @@
 /**
- * Empresa.js
+ * Operador.js
  *
- * @description :: A model definition.  Represents a database table/collection/etc.
+ * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
@@ -12,6 +12,10 @@ module.exports = {
     nome: {
       type: 'string' , required: true
     },
+    // associação com table empresa um p muitos
+    id_empresa: {
+      model: 'empresa'
+    },
     dt_inicio_ope: {
       type: 'string', columnType: 'date', allowNull: true
     },
@@ -20,15 +24,12 @@ module.exports = {
     },
     ativo: {
       type: 'boolean', defaultsTo: true
-    },
-    // associação com table central um p muitos
-    central: {
-      collection: 'central', via: 'id_empresa'
-    },
-    //associação com table operador um p muitos
-    operador: {
-      collection: 'operador', via: 'id_empresa'
-    }
+    }//,
+    // associação com table empresa um p um
+    //empresa: {
+      //collection: 'empresa', via: 'id_empresa'
+    //}
+
   },
 
 };
