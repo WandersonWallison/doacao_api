@@ -31,13 +31,16 @@ module.exports = {
     id_pai: {
       model: 'user', via: 'id'
     },
-    // associação com table acesso_grupo um p um
-    id_acesso_grupo: {
-      model: 'acesso_grupo'
+    // associação com table grupo um p um
+    id_grupo: {
+      model: 'grupo'
+    },// associação com table grupo um p muitos
+    id_escritorio: {
+      model: 'escritorio'
     }
   },
 
-  tableName: 'acesso_usuario',
+  tableName: 'usuario',
 
   customToJSON: function () {
     return _.omit(this, ['password'])

@@ -12,11 +12,14 @@ module.exports = {
     descricao: {
       type: 'string', required: true,
     },
+    sigla: {
+      type: 'string', maxLength: 15
+    },
     ativo: {
       type: 'boolean', defaultsTo: true
     },
     // associação com table central um p muitos
-    central: {
+    centrais: {
       collection: 'central', via: 'id_tipo_central'
     }
   },

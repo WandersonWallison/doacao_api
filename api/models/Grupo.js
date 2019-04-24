@@ -17,7 +17,12 @@ module.exports = {
     },
     // associação com table user um p muitos
     usuario: {
-      collection: 'user', via: 'id_acesso_grupo'
+      collection: 'user', via: 'id_grupo'
+    },
+    // associação com link muitos p muitos 
+    links: {
+      collection: 'link',
+      via: 'grupos'
     }
   },
 

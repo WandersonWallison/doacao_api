@@ -31,6 +31,11 @@ module.exports = {
     id_tipo_link: {
       model: 'tipo_link'
     },
+    // associação com grupo muitos p muitos 
+    grupos: {
+      collection: 'grupo',
+      via: 'links'
+    }
   },
 
 };

@@ -24,7 +24,10 @@ module.exports = {
     // associação com table central muitos p muitos
     centrais: {
       collection: 'central', via: 'escritorios'
-    }
+    },
+    users: {
+      collection: 'user', via: 'id_escritorio'
+    },
 
   },
 

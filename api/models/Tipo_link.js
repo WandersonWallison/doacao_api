@@ -17,7 +17,7 @@ module.exports = {
     },
     // associação com table user um p muitos
     links: {
-      collection: 'acesso_link', via: 'id_tipo_link'
+      collection: 'link', via: 'id_tipo_link'
     },
   },
 
