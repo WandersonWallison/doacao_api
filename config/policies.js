@@ -41,5 +41,8 @@ module.exports.policies = {
   },
   'tipo_situacao_movimento': {
     '*': true
+  },
+  'operador': {
+    '*': true
   }
 };
