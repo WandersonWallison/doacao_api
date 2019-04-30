@@ -25,7 +25,10 @@ module.exports.policies = {
   'user': {
     '*': true
   },
-  'acesso_grupo': {
+  'grupo': {
+    '*': true
+  },
+  'central': {
     '*': true
   },
   'tipo_link': {
