@@ -33,12 +33,10 @@ module.exports.policies = {
   },
   'tipo_link': {
     '*': true
-  }
-  ,
+  },
   'tipo_situacao_tributaria': {
     '*': true
-  }
-  ,
+  },
   'tipo_movimento': {
     '*': true
   },

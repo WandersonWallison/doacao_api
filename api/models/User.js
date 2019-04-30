@@ -29,7 +29,7 @@ module.exports = {
     },
     // auto relacionamento user
     id_pai: {
-      model: 'user', via: 'id'
+      type: 'number'
     },
     // associação com table grupo um p um
     id_grupo: {
