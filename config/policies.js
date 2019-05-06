@@ -28,6 +28,15 @@ module.exports.policies = {
   'grupo': {
     '*': true
   },
+  'empresa': {
+    '*': true
+  },
+  'escritorio': {
+    '*': true
+  },
+  'link': {
+    '*': true
+  },
   'central': {
     '*': true
   },
@@ -37,13 +46,10 @@ module.exports.policies = {
   'tipo_situacao_tributaria': {
     '*': true
   },
-  'tipo_movimento': {
-    '*': true
-  },
   'tipo_situacao_movimento': {
     '*': true
   },
-  'operador': {
+  'endereco': {
     '*': true
   }
 };
