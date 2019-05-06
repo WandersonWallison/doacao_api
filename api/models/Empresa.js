@@ -24,6 +24,10 @@ module.exports = {
     // associação com table central um p muitos
     central: {
       collection: 'central', via: 'id_empresa'
+    },
+    // associação com table endereco um p um
+    endereco: {
+      collection: 'endereco', via: 'id_empresa'
     }
   },
 

@@ -37,6 +37,10 @@ module.exports = {
     },// associação com table grupo um p muitos
     id_escritorio: {
       model: 'escritorio'
+    },
+    // associação com table endereco um p um
+    endereco: {
+      collection: 'endereco', via: 'id_user'
     }
   },
 

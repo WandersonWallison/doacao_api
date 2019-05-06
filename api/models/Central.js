@@ -26,6 +26,10 @@ module.exports = {
     // associação com table escrtorio muitos p muitos
     escritorios: {
       collection: 'escritorio', via: 'centrais'
+    },
+    // associação com table endereço um p um
+    endereco: {
+      collection: 'endereco', via: 'id_central'
     }
   },
 

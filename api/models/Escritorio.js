@@ -28,6 +28,9 @@ module.exports = {
     users: {
       collection: 'user', via: 'id_escritorio'
     },
+    endereco: {
+      collection: 'endereco', via: 'id_escritorio'
+    },
 
   },
 
