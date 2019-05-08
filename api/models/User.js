@@ -14,9 +14,27 @@ module.exports = {
     cvm: {
       type: "string"
     },
+    data_nascimento: {
+      type: 'string', columnType: 'datetime'
+    },
+    cpf: {
+      type: 'string'
+    },
+    cnh: {
+      type: 'string'
+    },
+    rg: {
+      type: 'string'
+    },
     password: {
       columnName: 'senha',
       type: 'string', required: true
+    },
+    telefone: {
+      type: 'string'
+    },
+    celular: {
+      type: 'string'
     },
     dt_inicio_ope: {
       type: 'string', columnType: 'datetime'
