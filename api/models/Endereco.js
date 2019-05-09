@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
 
     tipo: {
-      type: "string", isIn: ['Pessoal', 'Comercial'],
+      type: "string", isIn: ['Residencial', 'Comercial'],
     },
     cep: {
       type: "string"
