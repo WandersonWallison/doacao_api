@@ -12,6 +12,24 @@ module.exports = {
     nome: {
       type: 'string' , required: true
     },
+    razao_social: {
+      type: 'string', maxLength: 120
+    },
+    email: {
+      type: 'string', unique: true, isEmail: true
+    },
+    cnpj: {
+      type: 'string'
+    },
+    telefone: {
+      type: 'string'
+    },
+    celular: {
+      type: 'string'
+    },
+    site: {
+      type: 'string'
+    },
     ativo: {
       type: 'boolean', defaultsTo: true
     },
