@@ -40,6 +40,9 @@ module.exports.policies = {
   'central': {
     '*': true
   },
+  'tipo_central': {
+    '*': true
+  },
   'tipo_link': {
     '*': true
   },
