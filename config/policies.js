@@ -46,6 +46,9 @@ module.exports.policies = {
   'tipo_link': {
     '*': true
   },
+  'produto': {
+    '*': true
+  },
   'tipo_situacao_tributaria': {
     '*': true
   },
