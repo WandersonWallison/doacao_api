@@ -46,7 +46,7 @@ module.exports.policies = {
   'tipo_link': {
     '*': true
   },
-  'produto': {
+  'importacao': {
     '*': true
   },
   'tipo_situacao_tributaria': {
