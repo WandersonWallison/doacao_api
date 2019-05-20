@@ -15,6 +15,10 @@ module.exports = {
     ativo: {
       type: 'boolean', defaultsTo: true
     },
+    clientes: {
+      collection: 'cliente',
+      via: 'id_tipo_solucao_tributaria'
+    }
   },
 
 };

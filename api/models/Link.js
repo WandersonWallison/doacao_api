@@ -27,11 +27,11 @@ module.exports = {
     ativo: {
       type: 'boolean', defaultsTo: true
     },
-    // associação com table acesso_grupo um p muitos
+    // associaÃ§Ã£o com table acesso_grupo um p muitos
     id_tipo_link: {
       model: 'tipo_link'
     },
-    // associação com grupo muitos p muitos 
+    // associaÃ§Ã£o com grupo muitos p muitos 
     grupos: {
       collection: 'grupo',
       via: 'links'

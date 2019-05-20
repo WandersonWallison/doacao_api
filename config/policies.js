@@ -49,6 +49,9 @@ module.exports.policies = {
   'importacao': {
     '*': true
   },
+  'cliente': {
+    '*': true
+  },
   'tipo_situacao_tributaria': {
     '*': true
   },
