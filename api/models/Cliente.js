@@ -12,7 +12,7 @@ module.exports = {
     nome: {
       type: 'string' , required: true
     },
-    id_externo: {
+    id_xp: {
       type: 'string' 
     },
     id_lead: {

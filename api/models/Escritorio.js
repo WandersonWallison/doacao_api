@@ -39,6 +39,10 @@ module.exports = {
     ativo: {
       type: 'boolean', defaultsTo: true
     },
+    iss: {
+      type: 'number',
+      columnType: 'decimal(16,8)'
+    },
     // associação com table central muitos p muitos
     centrais: {
       collection: 'central', via: 'escritorios'

@@ -11,8 +11,14 @@ module.exports = {
       columnName: 'login',
       type: 'string', required: true, unique: true, isEmail: true
     },
+    id_xp: {
+      type: 'string'
+    },
+    comissionamento: {
+      type: 'number' 
+    },
     cvm: {
-      type: "string"
+      type: 'string'
     },
     data_nascimento: {
       type: 'string', columnType: 'datetime'
@@ -59,6 +65,11 @@ module.exports = {
     // associação com table endereco um p um
     endereco: {
       collection: 'endereco', via: 'id_user'
+    },
+    // associação com table endereco um p muito
+    clientes: {
+      collection: 'cliente',
+      via: 'id_assessor'
     }
   },
 
