@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-    data: {
+    data_ref: {
       type: 'string', columnType: 'datetime'
     },
     nome_arquivo: {
@@ -16,6 +16,30 @@ module.exports = {
     },
     descricao: {
       type: 'string', columnType: 'text'
+    },
+    status: {
+      type: 'string'
+    },
+    mensagem: {
+      type: 'string'
+    },
+    dthr_importacao: {
+      type: 'string', columnType: 'datetime'
+    },
+    dthr_validacao: {
+      type: 'string', columnType: 'datetime'
+    },
+    dthr_processamento: {
+      type: 'string', columnType: 'datetime'
+    },     
+    usr_importacao: {
+      type: 'number'
+    },
+    usr_validacao: {
+      type: 'number'
+    },
+    usr_processamento: {
+      type: 'number'
     },
     total: {
       type: 'number',
@@ -33,8 +57,8 @@ module.exports = {
       type: 'boolean', defaultsTo: true
     },
     itens: {
-      collection: 'importacao',
-      via: 'id_dados_importacao'
+      collection: 'comissionamento_item',
+      via: 'id_comissionamento'
     }
   },
 
