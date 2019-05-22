@@ -36,29 +36,29 @@ module.exports = {
       type: 'string'
     },
     data:{
-      type: 'number', columnType: 'datetime'
+      type: 'string', columnType: 'datetime'
     },
     receita_bruta: {
-      type: 'number',
+      type: 'string',
       columnType: 'decimal(16,8)'
     },
     receita_liquida: {
-      type: 'number',
+      type: 'string',
       columnType: 'decimal(16,8)'
     },
     comissao_escritorio_p: {
-      type: 'number'
+      type: 'string'
     },
     comissao_escritorio_r: {
-      type: 'number',
+      type: 'string',
       columnType: 'decimal(16,8)'
     },
     imposto: {
-      type: 'number',
+      type: 'string',
       columnType: 'decimal(16,8)'
     },
     comissao_liquida: {
-      type: 'number',
+      type: 'string',
       columnType: 'decimal(16,8)'
     },    
     id_comissionamento: {
