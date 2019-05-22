@@ -46,7 +46,16 @@ module.exports.policies = {
   'tipo_link': {
     '*': true
   },
-  'importacao': {
+  'comissionamento': {
+    '*': true
+  },
+  'comissionamento_item': {
+    '*': true
+  },
+  'comissionamento_faixa': {
+    '*': true
+  },
+  'comissionamento_faixa_item': {
     '*': true
   },
   'cliente': {
