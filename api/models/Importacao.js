@@ -46,7 +46,10 @@ module.exports = {
     },
     descricao: {
       type: 'string'
-    }
+    },
+    id_dados_importacao: {
+      model: 'dados_importacao'
+    },
   },
 
 };
