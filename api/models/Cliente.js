@@ -12,6 +12,9 @@ module.exports = {
     nome: {
       type: 'string' , required: true
     },
+    email: {
+      type: 'string', isEmail: true
+    },
     id_xp: {
       type: 'string' 
     },
@@ -44,6 +47,22 @@ module.exports = {
     },
     id_assessor: {
       model: 'user'
+    },
+    investimento_inicial: {
+      type: 'number',
+      columnType: 'decimal(16,8)'
+    },
+    razao_social: {
+      type: 'string'
+    },
+    cpf_cnpj: {
+      type: 'string'
+    },
+    rg: {
+      type: 'string'
+    },
+    telefone: {
+      type: 'string'
     },
     id_tipo_solucao_tributaria: {
       model: 'tipo_situacao_tributaria'
