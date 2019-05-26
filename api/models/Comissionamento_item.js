@@ -61,7 +61,7 @@ module.exports = {
       type: 'string',
       columnType: 'decimal(16,8)'
     },
-    iss_cliente: {
+    iss_escritorio: {
       type: 'number',
       columnType: 'decimal(16,8)'
     },
