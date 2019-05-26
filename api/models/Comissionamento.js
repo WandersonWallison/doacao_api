@@ -17,12 +17,6 @@ module.exports = {
     descricao: {
       type: 'string', columnType: 'text'
     },
-    status: {
-      type: 'string'
-    },
-    mensagem: {
-      type: 'string'
-    },
     dthr_importacao: {
       type: 'string', columnType: 'datetime'
     },
@@ -45,13 +39,19 @@ module.exports = {
       type: 'number',
       columnType: 'decimal(16,8)'
     },
-    total_inposto: {
+    total_imposto: {
       type: 'number',
       columnType: 'decimal(16,8)'
     },
     total_comissao: {
       type: 'number',
       columnType: 'decimal(16,8)'
+    },
+    status: {
+      type: 'string'
+    },
+    mensagem: {
+      type: 'string'
     },
     ativo: {
       type: 'boolean', defaultsTo: true

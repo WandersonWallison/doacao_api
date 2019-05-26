@@ -60,7 +60,35 @@ module.exports = {
     comissao_liquida: {
       type: 'string',
       columnType: 'decimal(16,8)'
-    },    
+    },
+    iss_cliente: {
+      type: 'number',
+      columnType: 'decimal(16,8)'
+    },
+    faixa_comissao_escritorio: {
+      type: 'number'
+    },
+    faixa_comissao_assessor: {
+      type: 'number'
+    },
+    valor_comissao_escritorio: {
+      type: 'number'
+    },
+    valor_comissao_assessor: {
+      type: 'number'
+    },
+    valor_iss_comissao_escritorio: {
+      type: 'number'
+    },
+    valor_iss_comissao_assessor: {
+      type: 'number'
+    },
+    calculo_comissao_escritorio: {
+      type: 'number'
+    },
+    calculo_comissao_assessor: {
+      type: 'number'
+    },
     id_comissionamento: {
       model: 'comissionamento'
     }

@@ -21,9 +21,6 @@ module.exports = {
     comissao_assessor: {
       type: 'number'
     },
-    registro: {
-      type: 'string'
-    },
     id_comissionamento_faixa: {
       model: 'comissionamento_faixa'
     },

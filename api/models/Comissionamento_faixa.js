@@ -11,9 +11,6 @@ module.exports = {
     descricao: {
       type: 'string'
     },
-    registro: {
-      type: 'string'
-    },
     faixa_itens: {
       collection: 'comissionamento_faixa_item',
       via: 'id_comissionamento_faixa'
