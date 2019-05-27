@@ -51,6 +51,10 @@ module.exports = {
     // associação com table central um p um
     id_central: {
       model: 'central', unique: true
+    },
+    // associação com table central um p um
+    id_cliente: {
+      model: 'cliente', unique: true
     }
   },
 

@@ -66,6 +66,9 @@ module.exports = {
     },
     id_tipo_solucao_tributaria: {
       model: 'tipo_situacao_tributaria'
+    },
+    endereco: {
+      collection: 'endereco', via: 'id_cliente'
     }
   },
 
