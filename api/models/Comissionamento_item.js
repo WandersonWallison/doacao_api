@@ -61,6 +61,12 @@ module.exports = {
       type: 'string',
       columnType: 'decimal(16,8)'
     },
+    status: {
+      type: 'string'
+    },
+    mensagem: {
+      type: 'string'
+    },
     iss_escritorio: {
       type: 'number',
       columnType: 'decimal(16,8)'

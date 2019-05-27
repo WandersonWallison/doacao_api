@@ -33,7 +33,7 @@ module.exports.routes = {
   '/logout': 'AuthController.logout',
 
   // Comissionamento proc 
-  'get /valida_comissionamento': 'ComissionamentoController.example',
+  'get /valida_comissionamento': 'ComissionamentoController.valida_comissionamento',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
