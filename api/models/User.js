@@ -62,6 +62,9 @@ module.exports = {
     id_escritorio: {
       model: 'escritorio'
     },
+    id_comissionamento_faixa: {
+      model: 'comissionamento_faixa'
+    },
     // associação com table endereco um p um
     endereco: {
       collection: 'endereco', via: 'id_user'

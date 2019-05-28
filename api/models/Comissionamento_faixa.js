@@ -15,6 +15,9 @@ module.exports = {
       collection: 'comissionamento_faixa_item',
       via: 'id_comissionamento_faixa'
     },
+    usuario: {
+      collection: 'user', via: 'id_comissionamento_faixa'
+    },
     ativo: {
       type: 'boolean', defaultsTo: true
     }
