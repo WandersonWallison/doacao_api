@@ -69,6 +69,10 @@ module.exports = {
     },
     endereco: {
       collection: 'endereco', via: 'id_cliente'
+    },
+    movimentacoes: {
+      collection: 'movimentacao',
+      via: 'id_cliente'
     }
   },
 

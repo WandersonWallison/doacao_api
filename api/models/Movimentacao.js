@@ -1,6 +1,6 @@
 /**
- * Tipo_situacao_movimento.js
- * @author :: Ailton Souza.
+ * Movimentacao.js
+ *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
@@ -8,15 +8,21 @@
 module.exports = {
 
   attributes: {
-    descricao: {
-      type: 'string' , required: true , unique: true
+    observacao: {
+      type: 'string' , required: true
+    },
+    valor: {
+      type: 'string',
+      columnType: 'decimal(16,8)'
     },
     ativo: {
       type: 'boolean', defaultsTo: true
     },
-    movimentacoes: {
-      collection: 'movimentacao',
-      via: 'id_situacao_movimento'
+    id_situacao_movimento: {
+      model: 'tipo_situacao_movimento'
+    },
+    id_cliente: {
+      model: 'cliente'
     }
   },
 
