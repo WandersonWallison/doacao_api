@@ -21,6 +21,9 @@ module.exports = {
     id_situacao_movimento: {
       model: 'tipo_situacao_movimento'
     },
+    data_registro:{
+      type: 'string', columnType: 'date'
+    },
     id_cliente: {
       model: 'cliente'
     }
