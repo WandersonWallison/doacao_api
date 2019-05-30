@@ -65,7 +65,7 @@ module.exports = {
       type: 'string'
     },
     mensagem: {
-      type: 'string'
+      type: 'string',columnType: 'text'
     },
     iss_escritorio: {
       type: 'number',
