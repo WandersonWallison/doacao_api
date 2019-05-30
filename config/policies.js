@@ -58,6 +58,9 @@ module.exports.policies = {
   'comissionamento_faixa_item': {
     '*': true
   },
+  'movimentacao': {
+    '*': true
+  },
   'cliente': {
     '*': true
   },
