@@ -27,6 +27,9 @@ module.exports = {
     logradouro: {
       type: 'string',
     },
+    complemento: {
+      type: 'string',
+    },
     numero:{
       type: 'number'
     },
