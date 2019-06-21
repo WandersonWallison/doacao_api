@@ -49,7 +49,7 @@ module.exports = {
     },
     users: {
       collection: 'user', via: 'id_empresa'
-    },
+    }
   },
 
 };
