@@ -31,7 +31,7 @@ module.exports = {
       type: 'string',
     },
     numero:{
-      type: 'number'
+      type: 'string'
     },
     latitude: {
       type: 'string', maxLength: 30,
