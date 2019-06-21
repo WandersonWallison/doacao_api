@@ -46,7 +46,10 @@ module.exports = {
     // associação com table endereco um p um
     endereco: {
       collection: 'endereco', via: 'id_empresa'
-    }
+    },
+    users: {
+      collection: 'user', via: 'id_empresa'
+    },
   },
 
 };

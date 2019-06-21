@@ -61,6 +61,9 @@ module.exports = {
     },// associação com table grupo um p muitos
     id_escritorio: {
       model: 'escritorio'
+    },// associação com table grupo um p muitos
+    id_empresa: {
+      model: 'escritorio'
     },
     id_comissionamento_faixa: {
       model: 'comissionamento_faixa'
