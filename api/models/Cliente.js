@@ -42,6 +42,9 @@ module.exports = {
     ativo: {
       type: 'boolean', defaultsTo: true
     },
+    tipo_pessoa: {
+      type: 'boolean', defaultsTo: true
+    },
     id_operador:{
       type: 'number'
     },
