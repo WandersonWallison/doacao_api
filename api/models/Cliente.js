@@ -16,7 +16,7 @@ module.exports = {
       type: 'string', isEmail: true
     },
     id_xp: {
-      type: 'string' 
+      type: 'string', unique: true
     },
     id_lead: {
       type: 'number' 
