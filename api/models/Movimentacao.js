@@ -26,7 +26,10 @@ module.exports = {
     },
     id_cliente: {
       model: 'cliente'
-    }
+    },
+    id_tipo_movimentacao: {
+      model: 'tipo_movimentacao'
+    },
   },
 
 };
