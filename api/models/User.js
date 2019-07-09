@@ -12,7 +12,7 @@ module.exports = {
       type: 'string', required: true, unique: true, isEmail: true
     },
     id_xp: {
-      type: 'string'
+      type: 'string', unique: true,
     },
     comissionamento: {
       type: 'number' 
