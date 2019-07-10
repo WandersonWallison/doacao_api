@@ -43,6 +43,9 @@ module.exports.policies = {
   'tipo_central': {
     '*': true
   },
+  'tipo_movimentacao': {
+    '*': true
+  },
   'tipo_link': {
     '*': true
   },
