@@ -28,7 +28,8 @@ module.exports = {
       type: 'boolean', defaultsTo: true
     },
     potencial_investimento: {
-      type: 'number'
+      type: 'number',
+      columnType: 'decimal(16,8)'
     },
     xp_assessor: {
       type: 'string'
