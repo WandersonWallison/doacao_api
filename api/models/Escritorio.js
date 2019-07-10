@@ -41,7 +41,7 @@ module.exports = {
     },
     iss: {
       type: 'number',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     // associação com table central muitos p muitos
     centrais: {

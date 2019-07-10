@@ -37,15 +37,15 @@ module.exports = {
     },
     total: {
       type: 'number',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     total_imposto: {
       type: 'number',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     total_comissao: {
       type: 'number',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     status: {
       type: 'string'

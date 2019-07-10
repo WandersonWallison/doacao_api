@@ -13,7 +13,7 @@ module.exports = {
     },
     valor: {
       type: 'string',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     ativo: {
       type: 'boolean', defaultsTo: true

@@ -29,7 +29,7 @@ module.exports = {
     },
     potencial_investimento: {
       type: 'number',
-      columnType: 'decimal(16,4)'
+      columnType: 'decimal(16,2)'
     },
     xp_assessor: {
       type: 'string'
@@ -54,7 +54,7 @@ module.exports = {
     },
     investimento_inicial: {
       type: 'number',
-      columnType: 'decimal(16,4)'
+      columnType: 'decimal(16,2)'
     },
     razao_social: {
       type: 'string'

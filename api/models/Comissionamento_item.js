@@ -40,26 +40,26 @@ module.exports = {
     },
     receita_bruta: {
       type: 'string',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     receita_liquida: {
       type: 'string',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     comissao_escritorio_p: {
       type: 'string'
     },
     comissao_escritorio_r: {
       type: 'string',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     imposto: {
       type: 'string',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     comissao_liquida: {
       type: 'string',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     status: {
       type: 'string'
@@ -69,7 +69,7 @@ module.exports = {
     },
     iss_escritorio: {
       type: 'number',
-      columnType: 'decimal(16,8)'
+      columnType: 'decimal(16,2)'
     },
     faixa_comissao_escritorio: {
       type: 'number'
