@@ -35,6 +35,9 @@ module.exports.routes = {
   // Comissionamento proc 
   'get /valida_comissionamento': 'ComissionamentoController.valida_comissionamento',
   'post /insert_arquivo': 'ComissionamentoController.insert_arquivo',
+
+  // movimentação
+  'get /calcula_movimentacao': 'MovimentacaoController.calcula_movimentacao',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
