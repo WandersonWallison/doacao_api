@@ -9,8 +9,10 @@ module.exports = {
     calcula_movimentacao: function(req, res){
         var x = req.param('user_id');
 
-        Movimentacao.query('select ((SELECT sum(valor) FROM prosp_dev.movimentacao where id_cliente = "'+x+'" and id_tipo_movimentacao = 1 )'+ '-' +
-		'(SELECT sum(valor) FROM prosp_dev.movimentacao where id_cliente = "'+x+'" and id_tipo_movimentacao in (2,3)) )', function(err, rawResult) {
+        
+        
+        Movimentacao.query('select ((SELECT sum(valor) FROM prosp_dev.movimentacao where id_cliente = "'+x+'" and id_tipo_movimentacao = 1  and ativo = 1)'+ '-' +
+            '(SELECT sum(valor) FROM prosp_dev.movimentacao where id_cliente = "'+x+'" and id_tipo_movimentacao in (2,3) and id_situacao_movimento <> 7 and ativo = 1))', function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
