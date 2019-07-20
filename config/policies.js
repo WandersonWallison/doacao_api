@@ -64,6 +64,9 @@ module.exports.policies = {
   'movimentacao': {
     '*': true
   },
+  'Tipo_movimentacao': {
+    '*': true
+  },
   'cliente': {
     '*': true
   },
