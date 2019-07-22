@@ -29,8 +29,8 @@ module.exports = {
         var x = req.param('user_id');
         
         Movimentacao.query('SELECT ((SELECT potencial_investimento FROM cliente WHERE id = "'+x+'" and ativo = 1)'+ '-' +
-            '((SELECT SUM(VALOR) FROM movimentacao WHERE id_cliente = "'+x+'" AND ativo= 1 AND id_tipo_movimentacao = 1 )'+ '-' +
-            '(SELECT SUM(VALOR) FROM movimentacao WHERE id_cliente = "'+x+'" AND ativo= 1 AND id_tipo_movimentacao = 3 )))', function(err, rawResult) {
+            '((SELECT coalesce(SUM(VALOR),0) FROM movimentacao WHERE id_cliente = "'+x+'" AND ativo= 1 AND id_tipo_movimentacao = 1 )'+ '-' +
+            '(SELECT coalesce(SUM(VALOR),0) FROM movimentacao WHERE id_cliente = "'+x+'" AND ativo= 1 AND id_tipo_movimentacao = 3 )))', function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
