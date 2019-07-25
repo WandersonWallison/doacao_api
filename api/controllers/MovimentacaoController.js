@@ -48,11 +48,11 @@ module.exports = {
         var x = req.param('user_id');
         var y = req.param('id_situacao_movimentacao');
     
-        Movimentacao.query('SELECT coalesce(sum(m.valor),0) FROM usuario AS u inner JOIN cliente AS c ON u.ID = c.id_assessor '+ 
-                           'inner JOIN movimentacao AS m ON M.id_cliente = c.id '+
-                           'where m.valor is not null and m.id_situacao_movimento is not null and '+ 
-                           'm.id_situacao_movimento = "'+y+'" and u.id = "'+x+'" and '+
-                           'c.ativo = 1 and u.ativo = 1 and m.ativo = 1 order by m.id_situacao_movimento', function(err, rawResult) {
+        Movimentacao.query('SELECT coalesce(sum(movimentacao.valor),0) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor '+ 
+                           'inner JOIN movimentacao ON movimentacao.id_cliente = cliente.id '+
+                           'where movimentacao.valor is not null and movimentacao.id_situacao_movimento is not null and '+ 
+                           'movimentacao.id_situacao_movimento = "'+y+'" and usuario.id = "'+x+'" and '+
+                           'cliente.ativo = 1 and usuario.ativo = 1 and movimentacao.ativo = 1 order by movimentacao.id_situacao_movimento', function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
