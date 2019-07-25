@@ -43,7 +43,29 @@ module.exports = {
             return res.send(myarr[1].substring(0,(myarr[1].length - 2)));
           
           });
+    },
+    retorna_total_movimentacao: function(req, res){
+        var x = req.param('user_id');
+        var y = req.param('id_situacao_movimentacao');
+    
+        Movimentacao.query('SELECT sum(M.valor) FROM usuario u inner JOIN cliente c ON u.ID = c.id_assessor'+ 
+                           'inner JOIN movimentacao M ON M.id_cliente = c.id' +
+                           'where M.valor is not null and M.id_situacao_movimento is not null and' + 
+                           'M.id_situacao_movimento = "'+y+'" and u.id = "'+x+'" and', function(err, rawResult) {
+            if (err) { return res.serverError(err); }
+          
+            // sails.log(rawResult);
+            // ...grab appropriate data...
+            // (result format depends on the SQL query that was passed in, and the adapter you're using)
+          
+            // Then parse the raw result and do whatever you like with it.
+            var mystr = JSON.stringify(rawResult.rows)
+            var myarr = mystr.split(":");
+            return res.send(myarr[1].substring(0,(myarr[1].length - 2)));
+          
+          });
     }
+
 
 };
 

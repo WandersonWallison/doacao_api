@@ -38,7 +38,8 @@ module.exports.routes = {
 
   // movimentação
   'get /calcula_movimentacao': 'MovimentacaoController.calcula_movimentacao',
-  'get /calcula_aporte': 'MovimentacaoController.calcula_aporte'
+  'get /calcula_aporte': 'MovimentacaoController.calcula_aporte',
+  'get /retorna_total_movimentacao': 'MovimentacaoController.retorna_total_movimentacao'
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
