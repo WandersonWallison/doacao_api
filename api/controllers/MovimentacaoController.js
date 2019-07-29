@@ -65,8 +65,26 @@ module.exports = {
             return res.send(myarr[1].substring(0,(myarr[1].length - 2)));
           
           });
-    }
+    },
 
+    // calcula o valor que poder ser movimentado 
+    limite_movimentacao: function(req, res){
+        
+        Movimentacao.query('SELECT(SELECT coalesce(SUM(VALOR),0) FROM movimentacao WHERE ativo= 1 AND id_tipo_movimentacao = 1)'+ '-' +
+        '(SELECT coalesce(SUM(VALOR),0) FROM movimentacao WHERE ativo= 1 AND id_tipo_movimentacao = 3 ) from DUAL', function(err, rawResult) {
+            if (err) { return res.serverError(err); }
+          
+            // sails.log(rawResult);
+            // ...grab appropriate data...
+            // (result format depends on the SQL query that was passed in, and the adapter you're using)
+          
+            // Then parse the raw result and do whatever you like with it.
+            var mystr = JSON.stringify(rawResult.rows)
+            var myarr = mystr.split(":");
+            return res.send(myarr[1].substring(0,(myarr[1].length - 2)));
+          
+          });
+    },
 
 };
 
