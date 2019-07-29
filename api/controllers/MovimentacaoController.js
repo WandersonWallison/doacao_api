@@ -92,10 +92,10 @@ module.exports = {
         var x = req.param('user_id');
         var query;
         if(x){
-             query = 'SELECT coalesce(count(cliente.id)) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor'+
+             query = 'SELECT coalesce(count(cliente.id)) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor '+
             'where usuario.id = "'+x+'" and cliente.ativo = 1 and usuario.ativo = 1';
         }else{ 
-        query = 'SELECT coalesce(count(cliente.id)) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor'+
+        query = 'SELECT coalesce(count(cliente.id)) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor '+
             'where cliente.ativo = 1 and usuario.ativo = 1';
         }
         Movimentacao.query(query, function(err, rawResult) {
