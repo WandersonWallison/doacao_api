@@ -86,5 +86,32 @@ module.exports = {
           });
     },
 
+
+    //retona quantidade de cliente por usuario
+    retorna_cliente: function(req, res){
+        var x = req.param('user_id');
+        var query;
+        if(x){
+             query = 'SELECT coalesce(count(cliente.id)) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor'+
+            'where usuario.id = "'+x+'" and cliente.ativo = 1 and usuario.ativo = 1';
+        }else{ 
+        query = 'SELECT coalesce(count(cliente.id)) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor'+
+            'where cliente.ativo = 1 and usuario.ativo = 1';
+        }
+        Movimentacao.query(query, function(err, rawResult) {
+            if (err) { return res.serverError(err); }
+          
+            // sails.log(rawResult);
+            // ...grab appropriate data...
+            // (result format depends on the SQL query that was passed in, and the adapter you're using)
+          
+            // Then parse the raw result and do whatever you like with it.
+            var mystr = JSON.stringify(rawResult.rows)
+            var myarr = mystr.split(":");
+            return res.send(myarr[1].substring(0,(myarr[1].length - 2)));
+          
+          });
+    }
+
 };
 
