@@ -138,6 +138,31 @@ module.exports = {
             return res.send(rawResult.rows);
           
           });
+    },
+    grafico_assessor: function(req, res){
+        Movimentacao.query('SELECT esc.nome escritorio, usu.nome assessor, coalesce(SUM(mov.valor),0) valor '+ 
+                            'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+ 
+                            'WHERE mov.id_tipo_movimentacao = 2 '+
+                            'AND mov.id_situacao_movimento <> 7 '+
+                            'AND mov.ativo = 1 '+
+                            'AND cli.ativo = 1 '+
+                            'AND esc.ativo = 1 '+
+                            'AND mov.id_cliente = cli.id '+
+                            'AND cli.id_assessor = usu.id '+
+                            'AND usu.id_escritorio = esc.id '+
+                            'GROUP BY esc.id, esc.nome, usu.id, usu.nome', function(err, rawResult) {
+            if (err) { return res.serverError(err); }
+          
+            // sails.log(rawResult);
+            // ...grab appropriate data...
+            // (result format depends on the SQL query that was passed in, and the adapter you're using)
+          
+            // Then parse the raw result and do whatever you like with it.
+            //var mystr = JSON.stringify(rawResult.rows)
+            //var myarr = mystr.split(":");
+            return res.send(rawResult.rows);
+          
+          });
     }
 };
 
