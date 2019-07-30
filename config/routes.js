@@ -41,7 +41,10 @@ module.exports.routes = {
   'get /calcula_aporte': 'MovimentacaoController.calcula_aporte',
   'get /retorna_total_movimentacao': 'MovimentacaoController.retorna_total_movimentacao',
   'get /limite_movimentacao': 'MovimentacaoController.limite_movimentacao',
-  'get /retorna_cliente': 'MovimentacaoController.retorna_cliente'
+  'get /retorna_cliente': 'MovimentacaoController.retorna_cliente',
+
+  // cliente
+  'get /vw_cliente_sintetico': 'ClienteController.vw_cliente_sintetico'
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
