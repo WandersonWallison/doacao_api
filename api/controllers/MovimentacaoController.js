@@ -135,7 +135,7 @@ module.exports = {
             // Then parse the raw result and do whatever you like with it.
             //var mystr = JSON.stringify(rawResult.rows)
             //var myarr = mystr.split(":");
-            return res.send(rawResult);
+            return res.send(rawResult.rows);
           
           });
     }
