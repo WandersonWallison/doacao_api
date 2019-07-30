@@ -42,6 +42,7 @@ module.exports.routes = {
   'get /retorna_total_movimentacao': 'MovimentacaoController.retorna_total_movimentacao',
   'get /limite_movimentacao': 'MovimentacaoController.limite_movimentacao',
   'get /retorna_cliente': 'MovimentacaoController.retorna_cliente',
+  'get /grafico_valor_escritorio': 'MovimentacaoController.grafico_valor_escritorio',
 
   // cliente
   'get /vw_cliente_sintetico': 'ClienteController.vw_cliente_sintetico'
