@@ -115,7 +115,7 @@ module.exports = {
 
     grafico_valor_escritorio: function(req, res){
 
-        Movimentacao.query('SELECT esc.nome, coalesce(SUM(mov.valor),0) '+ 
+        Movimentacao.query('SELECT esc.nome, coalesce(SUM(mov.valor),0) valor '+ 
                             'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+
                             'WHERE mov.id_tipo_movimentacao = 2 '+
                             'AND mov.id_situacao_movimento <> 7 '+
