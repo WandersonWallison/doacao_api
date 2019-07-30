@@ -9,7 +9,7 @@ module.exports = {
 
     vw_cliente_sintetico: function(req, res){
     
-        Movimentacao.query('Select * from vw_cliente_sintetico', function(err, rawResult) {
+        Cliente.query('Select * from vw_cliente_sintetico', function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
