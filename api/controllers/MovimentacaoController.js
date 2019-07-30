@@ -46,13 +46,34 @@ module.exports = {
     },
     retorna_total_movimentacao: function(req, res){
         var x = req.param('user_id');
-        var y = req.param('id_situacao_movimentacao');
+        var y = req.param('id_situacao_movimentacao');        
+        var query;
+        if(x){
+             query = 'SELECT coalesce(sum(movimentacao.valor),0) '+   
+             'FROM usuario,cliente,movimentacao '+        
+             'where usuario.id = cliente.id_assessor and '+ 
+             'cliente.id = movimentacao.id_cliente and '+ 
+             'movimentacao.valor is not null and '+ 
+             'movimentacao.id_situacao_movimento is not null and '+ 
+             'movimentacao.id_situacao_movimento = "'+y+'" and '+
+             'movimentacao.id_tipo_movimentacao <> 3 and '+
+             'usuario.id = "'+x+'" and '+  
+             'cliente.ativo = 1 and usuario.ativo = 1 and movimentacao.ativo = 1 '+ 
+             'order by movimentacao.id_situacao_movimento';
+        }else{ 
+            query = 'SELECT coalesce(sum(movimentacao.valor),0) '+   
+            'FROM usuario,cliente,movimentacao '+        
+            'where usuario.id = cliente.id_assessor and '+ 
+            'cliente.id = movimentacao.id_cliente and '+ 
+            'movimentacao.valor is not null and '+ 
+            'movimentacao.id_situacao_movimento is not null and '+ 
+            'movimentacao.id_situacao_movimento = "'+y+'" and '+
+            'movimentacao.id_tipo_movimentacao <> 3 and '+
+            'cliente.ativo = 1 and usuario.ativo = 1 and movimentacao.ativo = 1 '+ 
+            'order by movimentacao.id_situacao_movimento';
+        }
     
-        Movimentacao.query('SELECT coalesce(sum(movimentacao.valor),0) FROM usuario inner JOIN cliente ON usuario.ID = cliente.id_assessor '+ 
-                           'inner JOIN movimentacao ON movimentacao.id_cliente = cliente.id '+
-                           'where movimentacao.valor is not null and movimentacao.id_situacao_movimento is not null and '+ 
-                           'movimentacao.id_situacao_movimento = "'+y+'" and usuario.id = "'+x+'" and '+
-                           'cliente.ativo = 1 and usuario.ativo = 1 and movimentacao.ativo = 1 order by movimentacao.id_situacao_movimento', function(err, rawResult) {
+        Movimentacao.query(query, function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
