@@ -168,10 +168,13 @@ module.exports = {
                             'AND mov.ativo = 1 '+
                             'AND cli.ativo = 1 '+
                             'AND esc.ativo = 1 '+
+                            'AND mov.valor != 0 '+
+                            'AND mov.valor is not null '+
                             'AND mov.id_cliente = cli.id '+
                             'AND cli.id_assessor = usu.id '+
                             'AND usu.id_escritorio = esc.id '+
-                            'GROUP BY esc.id, esc.nome, usu.id, usu.nome', function(err, rawResult) {
+                            'GROUP BY esc.id, esc.nome, usu.id, usu.nome '+
+                            'order by valor desc', function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
