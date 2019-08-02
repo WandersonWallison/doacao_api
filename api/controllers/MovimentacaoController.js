@@ -49,7 +49,7 @@ module.exports = {
         var y = req.param('id_situacao_movimentacao');        
         var query;
         if(x){
-             query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor '
+             query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor_movimentacao '
              'FROM movimentacao ,tipo_situacao_movimento ,tipo_movimentacao ,cliente ,usuario '+
              'WHERE movimentacao.id_situacao_movimento = tipo_situacao_movimento.id '+
                  'AND movimentacao.id_tipo_movimentacao = tipo_movimentacao.id '+
@@ -62,7 +62,7 @@ module.exports = {
                  'AND usuario.id = "'+x+'" '+
                  'GROUP BY tipo_situacao_movimento.descricao';
         }else{ 
-            query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor '+
+            query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor_movimentacao '+
             'FROM movimentacao ,tipo_situacao_movimento, tipo_movimentacao ,cliente ,usuario '+
             'WHERE movimentacao.id_situacao_movimento = tipo_situacao_movimento.id '+
                 'AND movimentacao.id_tipo_movimentacao = tipo_movimentacao.id '+
