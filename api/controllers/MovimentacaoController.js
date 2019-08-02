@@ -61,7 +61,8 @@ module.exports = {
                  'AND movimentacao.ativo = 1 '+
                  'AND tipo_situacao_movimento.ativo = 1 '+
                  'AND usuario.id = "'+x+'" '+
-                 'GROUP BY tipo_situacao_movimento.descricao';
+                 'GROUP BY tipo_situacao_movimento.descricao '+
+                 'ORDER BY valor_movimentacao desc';
         }else{ 
             query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor_movimentacao '+
             'FROM movimentacao ,tipo_situacao_movimento, tipo_movimentacao ,cliente ,usuario '+
@@ -73,7 +74,8 @@ module.exports = {
                 'AND movimentacao.valor != 0 '+
                 'AND movimentacao.ativo = 1 '+
                 'AND tipo_situacao_movimento.ativo = 1 '+
-                'GROUP BY tipo_situacao_movimento.descricao';
+                'GROUP BY tipo_situacao_movimento.descricao '+
+                'ORDER BY valor_movimentacao desc';
         }
     
         Movimentacao.query(query, function(err, rawResult) {
