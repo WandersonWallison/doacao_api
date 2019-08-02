@@ -49,29 +49,30 @@ module.exports = {
         var y = req.param('id_situacao_movimentacao');        
         var query;
         if(x){
-             query = 'movimentacao mov, tipo_situacao_movimento tsm, tipo_movimentacao tm, cliente cli, usuario usu '
-             'WHERE mov.id_situacao_movimento = tsm.id AND '+
-             'mov.id_tipo_movimentacao = tm.id AND '+
-             'mov.id_cliente = cli.id AND '+
-             'cli.id_assessor = usu.id AND '+
-             'tm.id IN (2) AND '+
-             'mov.ativo = 1 AND '+
-             'mov.valor != 0 AND '+
-             'mov.ativo = 1 AND '+
-             'usu.id = "'+x+'" '+
-             'GROUP BY tm.descricao, tsm.descricao';
+             query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor '
+             'FROM movimentacao ,tipo_situacao_movimento ,tipo_movimentacao ,cliente ,usuario '+
+             'WHERE movimentacao.id_situacao_movimento = tipo_situacao_movimento.id '+
+                 'AND movimentacao.id_tipo_movimentacao = tipo_movimentacao.id '+
+                 'AND movimentacao.id_cliente = cliente.id '+
+                 'AND cliente.id_assessor = usuario.id '+
+                 'AND tipo_movimentacao.id IN (2) '+
+                 'AND movimentacao.valor != 0 '+
+                 'AND movimentacao.ativo = 1 '+
+                 'AND movimentacao.ativo = 1 '+
+                 'AND usuario.id = "'+x+'" '+
+                 'GROUP BY tipo_situacao_movimento.descricao';
         }else{ 
-            query = 'SELECT tsm.descricao, COALESCE(SUM(mov.valor), 0) valor '+
-            'FROM movimentacao mov, tipo_situacao_movimento tsm, tipo_movimentacao tm, cliente cli, usuario usu '+ 
-            'WHERE mov.id_situacao_movimento = tsm.id AND '+
-            'mov.id_tipo_movimentacao = tm.id AND '+
-            'mov.id_cliente = cli.id AND '+
-            'cli.id_assessor = usu.id AND '+
-            'tm.id IN (2) AND '+
-            'mov.valor != 0 AND '+
-            'mov.ativo = 1 AND '+
-            'mov.ativo = 1 '+
-            'GROUP BY tsm.descricao';
+            query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor '+
+            'FROM movimentacao ,tipo_situacao_movimento, tipo_movimentacao ,cliente ,usuario '+
+            'WHERE movimentacao.id_situacao_movimento = tipo_situacao_movimento.id '+
+                'AND movimentacao.id_tipo_movimentacao = tipo_movimentacao.id '+
+                'AND movimentacao.id_cliente = cliente.id '+
+                'AND cliente.id_assessor = usuario.id '+
+                'AND tipo_movimentacao.id IN (2) '+
+                'AND movimentacao.valor != 0 '+
+                'AND movimentacao.ativo = 1 '+
+                'AND movimentacao.ativo = 1 '+
+                'GROUP BY tipo_situacao_movimento.descricao';
         }
     
         Movimentacao.query(query, function(err, rawResult) {
