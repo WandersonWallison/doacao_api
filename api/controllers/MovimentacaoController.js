@@ -83,9 +83,9 @@ module.exports = {
             // (result format depends on the SQL query that was passed in, and the adapter you're using)
           
             // Then parse the raw result and do whatever you like with it.
-            var mystr = JSON.stringify(rawResult.rows)
-            var myarr = mystr.split(":");
-            return res.send(myarr[1].substring(0,(myarr[1].length - 2)));
+            //var mystr = JSON.stringify(rawResult.rows)
+            //var myarr = mystr.split(":");
+            return res.send(rawResult.rows);
           
           });
     },
