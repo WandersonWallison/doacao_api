@@ -58,8 +58,8 @@ module.exports = {
                  'AND tipo_movimentacao.id IN (2) '+
                  'AND movimentacao.valor != 0 '+
                  'AND movimentacao.ativo = 1 '+
-                 'AND movimentacao.ativo = 1 '+
-                 'AND usuario.id = '+x+' '+
+                 'AND tipo_situacao_movimento.ativo = 1 '+
+                 'AND usuario.id = "'+x+'" '+
                  'GROUP BY tipo_situacao_movimento.descricao';
         }else{ 
             query = 'SELECT tipo_situacao_movimento.descricao, COALESCE(SUM(movimentacao.valor), 0) valor_movimentacao '+
@@ -71,7 +71,7 @@ module.exports = {
                 'AND tipo_movimentacao.id IN (2) '+
                 'AND movimentacao.valor != 0 '+
                 'AND movimentacao.ativo = 1 '+
-                'AND movimentacao.ativo = 1 '+
+                'AND tipo_situacao_movimento.ativo = 1 '+
                 'GROUP BY tipo_situacao_movimento.descricao';
         }
     
