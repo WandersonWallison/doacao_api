@@ -40,6 +40,7 @@ module.exports.routes = {
   'get /calcula_movimentacao': 'MovimentacaoController.calcula_movimentacao',
   'get /calcula_aporte': 'MovimentacaoController.calcula_aporte',
   'get /retorna_total_movimentacao': 'MovimentacaoController.retorna_total_movimentacao',
+  'get /retorna_total': 'MovimentacaoController.retorna_total',
   'get /limite_movimentacao': 'MovimentacaoController.limite_movimentacao',
   'get /retorna_cliente': 'MovimentacaoController.retorna_cliente',
   'get /grafico_valor_escritorio': 'MovimentacaoController.grafico_valor_escritorio',
