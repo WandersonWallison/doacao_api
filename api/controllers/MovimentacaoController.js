@@ -183,18 +183,36 @@ module.exports = {
     },
 
     grafico_valor_escritorio: function(req, res){
+        var x = req.param('user_id');
+        var query;
+        if(x){
+            query = 'SELECT esc.nome, coalesce(SUM(mov.valor),0) valor '+ 
+            'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+
+            'WHERE mov.id_tipo_movimentacao = 2 '+
+            'AND mov.id_situacao_movimento <> 7 '+
+            'AND mov.ativo = 1 '+
+            'AND cli.ativo = 1 '+
+            'AND esc.ativo = 1 '+
+            'AND mov.id_cliente = cli.id '+
+            'AND cli.id_assessor = usu.id '+
+            'AND usu.id_escritorio = esc.id '+
+            'AND usu.id = "'+x+'" '+
+            'GROUP BY esc.id, esc.nome';
+       }else{ 
+            query = 'SELECT esc.nome, coalesce(SUM(mov.valor),0) valor '+ 
+            'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+
+            'WHERE mov.id_tipo_movimentacao = 2 '+
+            'AND mov.id_situacao_movimento <> 7 '+
+            'AND mov.ativo = 1 '+
+            'AND cli.ativo = 1 '+
+            'AND esc.ativo = 1 '+
+            'AND mov.id_cliente = cli.id '+
+            'AND cli.id_assessor = usu.id '+
+            'AND usu.id_escritorio = esc.id '+
+            'GROUP BY esc.id, esc.nome';
+       }
 
-        Movimentacao.query('SELECT esc.nome, coalesce(SUM(mov.valor),0) valor '+ 
-                            'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+
-                            'WHERE mov.id_tipo_movimentacao = 2 '+
-                            'AND mov.id_situacao_movimento <> 7 '+
-                            'AND mov.ativo = 1 '+
-                            'AND cli.ativo = 1 '+
-                            'AND esc.ativo = 1 '+
-                            'AND mov.id_cliente = cli.id '+
-                            'AND cli.id_assessor = usu.id '+
-                            'AND usu.id_escritorio = esc.id '+
-                            'GROUP BY esc.id, esc.nome', function(err, rawResult) {
+        Movimentacao.query(query, function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
@@ -209,20 +227,41 @@ module.exports = {
           });
     },
     grafico_assessor: function(req, res){
-        Movimentacao.query('SELECT esc.nome escritorio, usu.nome assessor, coalesce(SUM(mov.valor),0) valor '+ 
-                            'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+ 
-                            'WHERE mov.id_tipo_movimentacao = 2 '+
-                            'AND mov.id_situacao_movimento <> 7 '+
-                            'AND mov.ativo = 1 '+
-                            'AND cli.ativo = 1 '+
-                            'AND esc.ativo = 1 '+
-                            'AND mov.valor != 0 '+
-                            'AND mov.valor is not null '+
-                            'AND mov.id_cliente = cli.id '+
-                            'AND cli.id_assessor = usu.id '+
-                            'AND usu.id_escritorio = esc.id '+
-                            'GROUP BY esc.id, esc.nome, usu.id, usu.nome '+
-                            'order by valor desc', function(err, rawResult) {
+        var x = req.param('user_id');
+        var query;
+        if(x){
+            query = 'SELECT esc.nome escritorio, usu.nome assessor, coalesce(SUM(mov.valor),0) valor '+ 
+            'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+ 
+            'WHERE mov.id_tipo_movimentacao = 2 '+
+            'AND mov.id_situacao_movimento <> 7 '+
+            'AND mov.ativo = 1 '+
+            'AND cli.ativo = 1 '+
+            'AND esc.ativo = 1 '+
+            'AND mov.valor != 0 '+
+            'AND mov.valor is not null '+
+            'AND mov.id_cliente = cli.id '+
+            'AND cli.id_assessor = usu.id '+
+            'AND usu.id_escritorio = esc.id '+
+            'AND usu.id = "'+x+'" '+
+            'GROUP BY esc.id, esc.nome, usu.id, usu.nome '+
+            'order by valor desc';
+       }else{ 
+            query = 'SELECT esc.nome escritorio, usu.nome assessor, coalesce(SUM(mov.valor),0) valor '+ 
+            'FROM movimentacao mov, cliente cli, usuario usu, escritorio esc '+ 
+            'WHERE mov.id_tipo_movimentacao = 2 '+
+            'AND mov.id_situacao_movimento <> 7 '+
+            'AND mov.ativo = 1 '+
+            'AND cli.ativo = 1 '+
+            'AND esc.ativo = 1 '+
+            'AND mov.valor != 0 '+
+            'AND mov.valor is not null '+
+            'AND mov.id_cliente = cli.id '+
+            'AND cli.id_assessor = usu.id '+
+            'AND usu.id_escritorio = esc.id '+
+            'GROUP BY esc.id, esc.nome, usu.id, usu.nome '+
+            'order by valor desc';
+       }
+        Movimentacao.query(query, function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
