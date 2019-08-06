@@ -31,6 +31,7 @@ module.exports.routes = {
   'post /login': 'AuthController.login',
   'post /register': 'AuthController.register',
   '/logout': 'AuthController.logout',
+  '/retorna_assessor_qtd': 'AuthController.retorna_assessor_qtd',
 
   // Comissionamento proc 
   'get /valida_comissionamento': 'ComissionamentoController.valida_comissionamento',
