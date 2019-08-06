@@ -13,9 +13,9 @@ module.exports = {
     var y = req.param('empresa_id');
     var query;
         if(x){
-          query = 'select count(id) from usuario where id_grupo = 3 and id_empresa = "'+y+'" and id = "'+x+'"';
+          query = 'select count(id) qtd from usuario where id_grupo = 3 and id_empresa = "'+y+'" and id = "'+x+'"';
         }else{
-          query = 'select count(id) from usuario where id_grupo = 3 and id_empresa = "'+y+'"';
+          query = 'select count(id) qtd from usuario where id_grupo = 3 and id_empresa = "'+y+'"';
         }
     User.query(query, function(err, rawResult) {
         if (err) { return res.serverError(err); }
