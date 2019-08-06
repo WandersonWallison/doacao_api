@@ -47,7 +47,8 @@ module.exports.routes = {
   'get /grafico_assessor': 'MovimentacaoController.grafico_assessor',
 
   // cliente
-  'get /vw_cliente_sintetico': 'ClienteController.vw_cliente_sintetico'
+  'get /vw_cliente_sintetico': 'ClienteController.vw_cliente_sintetico',
+  'get /retorna_cliente_qtd': 'ClienteController.retorna_cliente_qtd'
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

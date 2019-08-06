@@ -20,7 +20,28 @@ module.exports = {
             return res.send(rawResult.rows);
           
           });
+    },
+    retorna_cliente_qtd: function(req, res){
+        var x = req.param('user_id');
+        var query;
+        if(x){
+             query = 'select count(cliente.id) qtd FROM cliente, usuario '+
+             'WHERE cliente.id_assessor = usuario.id and cliente.ativo=1 and usuario.ativo = 1 and usuario.id = "'+x+'"';
+        }else{ 
+             query = 'select count(cliente.id) qtd FROM cliente, usuario '+
+             'WHERE cliente.id_assessor = usuario.id and cliente.ativo = 1 and usuario.ativo = 1;';
+        }
+        Cliente.query(query, function(err, rawResult) {
+            if (err) { return res.serverError(err); }
+          
+            // sails.log(rawResult);
+            // ...grab appropriate data...
+            // (result format depends on the SQL query that was passed in, and the adapter you're using)
+          
+            // Then parse the raw result and do whatever you like with it.
+            return res.send(rawResult.rows);
+          
+          });
     }
-
 };
 
