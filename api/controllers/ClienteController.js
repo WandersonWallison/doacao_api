@@ -8,8 +8,15 @@
 module.exports = {
 
     vw_cliente_sintetico: function(req, res){
+        var x = req.param('user_id');
+        var query;
+        if(x){
+            query = 'select * from vw_cliente_sintetico where id_responsavel ="'+x+'"';
+        }else{
+            query = 'select * from vw_cliente_sintetico';   
+        }
     
-        Cliente.query('Select * from vw_cliente_sintetico', function(err, rawResult) {
+        Cliente.query(query, function(err, rawResult) {
             if (err) { return res.serverError(err); }
           
             // sails.log(rawResult);
