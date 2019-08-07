@@ -33,10 +33,10 @@ module.exports = {
         var query;
         if(x){
              query = 'select count(cliente.id) qtd FROM cliente, usuario '+
-             'WHERE cliente.id_assessor = usuario.id and cliente.ativo=1 and usuario.ativo = 1 and usuario.id = "'+x+'"';
+             'WHERE cliente.id_assessor = usuario.id and cliente.ativo=1  and usuario.id = "'+x+'"';
         }else{ 
              query = 'select count(cliente.id) qtd FROM cliente, usuario '+
-             'WHERE cliente.id_assessor = usuario.id and cliente.ativo = 1 and usuario.ativo = 1;';
+             'WHERE cliente.id_assessor = usuario.id and cliente.ativo = 1';
         }
         Cliente.query(query, function(err, rawResult) {
             if (err) { return res.serverError(err); }
