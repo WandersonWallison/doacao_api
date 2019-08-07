@@ -18,7 +18,7 @@ module.exports = {
         if (y){
             query = 'select * from vw_cliente_sintetico where id_operador ="'+y+'"';
         }
-        if (x){
+        if (z){
             query = 'select * from vw_cliente_sintetico where id_escritorio ="'+z+'"';
         }
 
