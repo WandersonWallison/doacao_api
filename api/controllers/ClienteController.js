@@ -8,10 +8,10 @@
 module.exports = {
 
     vw_cliente_sintetico: function(req, res){
-        var x = req.param('user_id');
+        var x = req.param('assessor_id');
         var query;
         if(x){
-            query = 'select * from vw_cliente_sintetico where id_responsavel ="'+x+'"';
+            query = 'select * from vw_cliente_sintetico where id_assessor ="'+x+'"';
         }else{
             query = 'select * from vw_cliente_sintetico';   
         }
