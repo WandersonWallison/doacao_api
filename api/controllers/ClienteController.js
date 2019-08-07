@@ -11,20 +11,16 @@ module.exports = {
         var x = req.param('assessor_id');
         var y = req.param('operador_id');
         var z = req.param('escritorio_id');
-        var query;
-        switch (true) {
-            case (x):
-                query = 'select * from vw_cliente_sintetico where id_assessor ="'+x+'"';                
-                break;
-        
-            case (y):
-                query = 'select * from vw_cliente_sintetico where id_operador ="'+y+'"';
-                break;
-
-            case (z):
-                query = 'select * from vw_cliente_sintetico where id_escritorio ="'+z+'"';
-                break
-            }
+        var query = 'select * from vw_cliente_sintetico';
+        if (x){
+            query = 'select * from vw_cliente_sintetico where id_assessor ="'+x+'"';                
+        }
+        if (y){
+            query = 'select * from vw_cliente_sintetico where id_operador ="'+y+'"';
+        }
+        if (x){
+            query = 'select * from vw_cliente_sintetico where id_escritorio ="'+z+'"';
+        }
 
         Cliente.query(query, function(err, rawResult) {
             if (err) { return res.serverError(err); }
