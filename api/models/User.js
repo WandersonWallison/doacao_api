@@ -11,15 +11,6 @@ module.exports = {
       columnName: 'login',
       type: 'string', required: true, unique: true, isEmail: true
     },
-    id_xp: {
-      type: 'string', unique: true,
-    },
-    comissionamento: {
-      type: 'number' 
-    },
-    cvm: {
-      type: 'string'
-    },
     data_nascimento: {
       type: 'string', columnType: 'datetime'
     },
@@ -42,42 +33,17 @@ module.exports = {
     celular: {
       type: 'string'
     },
-    dt_inicio_ope: {
-      type: 'string', columnType: 'datetime'
-    },
-    dt_fim_ope: {
-      type: 'string', columnType: 'datetime'
-    },
-    ativo: {
-      type: 'boolean', defaultsTo: true
-    },
-    // auto relacionamento user
-    id_pai: {
-      type: 'number'
-    },
     // associação com table grupo um p um
     id_grupo: {
       model: 'grupo'
-    },// associação com table grupo um p muitos
-    id_escritorio: {
-      required: false,
-      model: 'escritorio'
-    },// associação com table grupo um p muitos
-    id_empresa: {
-      required: false,
-      model: 'empresa'
-    },
-    id_comissionamento_faixa: {
-      model: 'comissionamento_faixa'
     },
     // associação com table endereco um p um
     endereco: {
       collection: 'endereco', via: 'id_user'
     },
-    // associação com table endereco um p muito
     clientes: {
       collection: 'cliente',
-      via: 'id_assessor'
+      via: 'id_cliente'
     }
   },
 

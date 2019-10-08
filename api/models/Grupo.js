@@ -12,17 +12,9 @@ module.exports = {
     descricao: {
       type: 'string', required: true,
     },
-    ativo: {
-      type: 'boolean', defaultsTo: true
-    },
     // associação com table user um p muitos
-    usuario: {
+    usuarios: {
       collection: 'user', via: 'id_grupo'
-    },
-    // associação com link muitos p muitos 
-    links: {
-      collection: 'link',
-      via: 'grupos'
     }
   },
 

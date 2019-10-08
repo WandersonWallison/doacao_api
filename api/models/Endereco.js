@@ -43,18 +43,6 @@ module.exports = {
     id_user: {
       model: 'user', unique: true
     },
-    // associação com table empresa um p um
-    id_empresa: {
-      model: 'empresa', unique: true
-    },
-    // associação com table escritorio um p um
-    id_escritorio: {
-      model: 'escritorio', unique: true
-    },
-    // associação com table central um p um
-    id_central: {
-      model: 'central', unique: true
-    },
     // associação com table central um p um
     id_cliente: {
       model: 'cliente', unique: true
