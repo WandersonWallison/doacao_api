@@ -33,5 +33,8 @@ module.exports.policies = {
   },
   'endereco': {
     '*': true
+  },
+  'doacao': {
+    '*': true
   }
 };
