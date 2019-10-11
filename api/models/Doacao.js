@@ -15,7 +15,7 @@ module.exports = {
     data_retirada: {
       type: 'string', columnType: 'datetime'
     },
-    receber_em: {
+    periodo: {
       type: 'string'
     },
     obs: {

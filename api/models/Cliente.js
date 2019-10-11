@@ -14,6 +14,9 @@ module.exports = {
     },
     email: {
       type: 'string', isEmail: true
+    },
+    data_nascimento: {
+      type: 'string', columnType: 'datetime'
     },    
     observacao: {
       type: 'string'
@@ -33,7 +36,7 @@ module.exports = {
     endereco: {
       collection: 'endereco', via: 'id_cliente'
     },
-    id_cliente: {
+    id_user: {
       model: 'user'
     },
     doacoes: {

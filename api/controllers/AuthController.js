@@ -7,22 +7,6 @@
 
 const passport = require('passport');
 module.exports = {
-  // retorna quantidade de assessor por escritorio 
-  retorna_assessor_qtd: function(req, res){
-    var x = req.param('user_id');
-    var y = req.param('empresa_id');
-    var query;
-        if(x){
-          query = 'select count(id) qtd from usuario where id_grupo = 3 and id_empresa = "'+y+'" and id = "'+x+'"';
-        }else{
-          query = 'select count(id) qtd from usuario where id_grupo = 3 and id_empresa = "'+y+'"';
-        }
-    User.query(query, function(err, rawResult) {
-        if (err) { return res.serverError(err); }
-        return res.send(rawResult.rows);
-      
-      });
-},
   //Login function
   login: function (req, res) {
     passport.authenticate('local', function (err, user, info) {
@@ -47,7 +31,7 @@ module.exports = {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      id_acesso_grupo: req.body.id_acesso_grupo
+      id_grupo: req.body.id_grupo
     }
     User.create(data).fetch().exec(function (err, user) {
       if (err) return res.negoiate(err);

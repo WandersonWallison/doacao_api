@@ -43,7 +43,7 @@ module.exports = {
     },
     clientes: {
       collection: 'cliente',
-      via: 'id_cliente'
+      via: 'id_user'
     }
   },
 
