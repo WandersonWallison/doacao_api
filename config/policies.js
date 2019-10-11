@@ -28,52 +28,7 @@ module.exports.policies = {
   'grupo': {
     '*': true
   },
-  'empresa': {
-    '*': true
-  },
-  'escritorio': {
-    '*': true
-  },
-  'link': {
-    '*': true
-  },
-  'central': {
-    '*': true
-  },
-  'tipo_central': {
-    '*': true
-  },
-  'tipo_movimentacao': {
-    '*': true
-  },
-  'tipo_link': {
-    '*': true
-  },
-  'comissionamento': {
-    '*': true
-  },
-  'comissionamento_item': {
-    '*': true
-  },
-  'comissionamento_faixa': {
-    '*': true
-  },
-  'comissionamento_faixa_item': {
-    '*': true
-  },
-  'movimentacao': {
-    '*': true
-  },
-  'Tipo_movimentacao': {
-    '*': true
-  },
   'cliente': {
-    '*': true
-  },
-  'tipo_situacao_tributaria': {
-    '*': true
-  },
-  'tipo_situacao_movimento': {
     '*': true
   },
   'endereco': {

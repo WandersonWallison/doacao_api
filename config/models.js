@@ -72,7 +72,7 @@ module.exports.models = {
     id: { type: 'number', autoIncrement: true, },
     dthr_atualizacao: { type: 'ref', columnType: 'datetime', autoUpdatedAt: true, },
     dthr_registro: { type: 'ref', columnType: 'datetime', autoCreatedAt: true, },
-    id_responsavel: { type: 'number' },
+    ativo: { type: 'boolean', defaultsTo: true, },
     //--------------------------------------------------------------------------
     //  /\   Using MongoDB?
     //  ||   Replace `id` above with this instead:
