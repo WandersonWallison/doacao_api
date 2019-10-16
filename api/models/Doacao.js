@@ -18,6 +18,12 @@ module.exports = {
     periodo: {
       type: 'string'
     },
+    dia: {
+      type: 'number'
+    },
+    mes: {
+      type: 'number'
+    },
     obs: {
       type: 'string'
     },
