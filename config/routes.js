@@ -31,7 +31,7 @@ module.exports.routes = {
   'post /login': 'AuthController.login',
   'post /register': 'AuthController.register',
   '/logout': 'AuthController.logout',
-  '/retorna_assessor_qtd': 'AuthController.retorna_assessor_qtd',
+  'get /lista': 'AuthController.lista'
 /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

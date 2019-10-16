@@ -7,6 +7,17 @@
 
 const passport = require('passport');
 module.exports = {
+  lista: function(req, res){
+    var x = req.param('dia');
+    var query = 'select * from cliente, doacao, endereco where doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente';
+    sails.log("teste");
+
+    Doacao.query(query, function(err, rawResult) {
+        if (err) { return res.serverError(err); }
+        return res.send(rawResult.rows);
+      
+      });
+},
   //Login function
   login: function (req, res) {
     passport.authenticate('local', function (err, user, info) {
