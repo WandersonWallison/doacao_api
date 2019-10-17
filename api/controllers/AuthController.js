@@ -9,14 +9,30 @@ const passport = require('passport');
 module.exports = {
   lista: function(req, res){
     var x = req.param('dia');
-    var query = 'select * from cliente, doacao, endereco where doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente';
-    sails.log("teste");
+    var y = req.param('bairro');
+    var query; 
+    if(x && y){
+      query ='select * from cliente, doacao, endereco where endereco.bairro = "'+y+'" and ' + 
+      'doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente';
+    }else{
+      query ='select * from cliente, doacao, endereco where ' + 
+      'doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente ' +
+      'order by endereco.bairro';
+    }
 
     Doacao.query(query, function(err, rawResult) {
         if (err) { return res.serverError(err); }
         return res.send(rawResult.rows);
       
       });
+},
+listaBairro: function(req, res){
+  var query = 'select	endereco.bairro from endereco group by endereco.bairro '; 
+  Endereco.query(query, function(err, rawResult) {
+      if (err) { return res.serverError(err); }
+      return res.send(rawResult.rows);
+    
+    });
 },
   //Login function
   login: function (req, res) {
