@@ -30,8 +30,20 @@ module.exports = {
     rg: {
       type: 'string'
     },
-    telefone: {
+    token: {
       type: 'string', unique: true 
+    },
+    telefone: {
+      type: 'string'
+    },
+    telefone1: {
+      type: 'string'
+    },
+    telefone2: {
+      type: 'string'
+    },
+    telefone3: {
+      type: 'string'
     },
     endereco: {
       collection: 'endereco', via: 'id_cliente'
