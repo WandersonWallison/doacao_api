@@ -24,7 +24,7 @@ module.exports = {
         'doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente';
       }if (z) {
         query = 'select * from cliente, doacao, endereco where ' + 
-                'doacao.dia = "'+x+'" and doacao.dia <= "'+z+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente ' +
+                'doacao.dia >= "'+x+'" and doacao.dia <= "'+z+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente ' +
                 'order by endereco.bairro';      
       } 
     }
