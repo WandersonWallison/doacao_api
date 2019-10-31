@@ -8,18 +8,26 @@
 const passport = require('passport');
 module.exports = {
   lista: function(req, res){
-    var x = req.param('dia');
+    var x = req.param('dia_i');
+    var z = req.param('dia_f');
     var y = req.param('bairro');
-    var query; 
-    if(x && y){
+    var query = 'select * from cliente, doacao, endereco where ' + 
+                'doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente ' +
+                'order by endereco.bairro';
+                 
+    if (z && y){
       query ='select * from cliente, doacao, endereco where endereco.bairro = "'+y+'" and ' + 
-      'doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente';
+      'doacao.dia >= "'+x+'" and doacao.dia <= "'+z+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente';
     }else{
-      query ='select * from cliente, doacao, endereco where ' + 
-      'doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente ' +
-      'order by endereco.bairro';
+      if (y){
+        query ='select * from cliente, doacao, endereco where endereco.bairro = "'+y+'" and ' + 
+        'doacao.dia = "'+x+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente';
+      }if (z) {
+        query = 'select * from cliente, doacao, endereco where ' + 
+                'doacao.dia = "'+x+'" and doacao.dia <= "'+z+'" and cliente.id = doacao.id_cliente and cliente.id = endereco.id_cliente ' +
+                'order by endereco.bairro';      
+      } 
     }
-
     Doacao.query(query, function(err, rawResult) {
         if (err) { return res.serverError(err); }
         return res.send(rawResult.rows);
