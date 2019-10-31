@@ -49,9 +49,8 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: require('sails-mysql'),
-    url: 'mysql://root@localhost:3306/doacao'
+    url: 'mysql://w2syst35_root:12345@108.179.253.70:3306/w2syst35_doacao'
 
   },
-
 
 };
