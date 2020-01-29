@@ -33,6 +33,9 @@ module.exports = {
     token: {
       type: 'string', unique: true 
     },
+    beneficiario: {
+      type: 'string'
+    },
     telefone: {
       type: 'string'
     },

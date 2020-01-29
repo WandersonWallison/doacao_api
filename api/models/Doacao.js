@@ -24,6 +24,9 @@ module.exports = {
     mes: {
       type: 'number'
     },
+    beneficiario: {
+      type: 'string'
+    },
     obs: {
       type: 'string'
     },
